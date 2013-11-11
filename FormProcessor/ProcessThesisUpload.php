@@ -7,7 +7,7 @@
 //Contact at: tapan84silchar[at]gmail.com
 include '../config/config.php';
 include '../Macros/CommonFunctions.php';
-
+echo "1";
 session_start();
 $pageResultString = "";
 $finalResult = FALSE;
@@ -19,7 +19,7 @@ if (isset($_FILES["fileThesis"])) {
     //$thesisFile = $_FILES["fileThesis"];
     $isOverWrite = $_POST['chkOverwrite'];
     $time_now = mktime(date('H') + 5, date('i') + 30, date('s'), date('m'), date('d'), date('Y'));
-
+echo "2";
     $newFileName = $_SESSION['roll_number'] . '-' . $_SESSION['class'] . "PI.pdf";
     if ($title == "" && $abstract == "" && !isInFileFormat($thesisFile["name"], "pdf")) {
         $pageResultString = '<br/><b>Uploading Failed. May be file size is more than 6MB.</b>';
@@ -32,7 +32,7 @@ if (isset($_FILES["fileThesis"])) {
             <br/>If you want to overwrite your previous upload, then go to <a href="' . constant("HOST11") . '/upload_thesis.php">uploading page</a> and repeat the process with the <b>overwrite</b> option.';
     } else {
         $result = "NONE";
-        require '../../../config/connect.php';
+        require '../config/connect.php';
             $sql = "SELECT user_nm FROM projects WHERE user_nm='" . $_SESSION['user_nm'] . "'";
             $rs = mysql_query($sql);
             if (mysql_affected_rows() >= 1) {
@@ -53,7 +53,7 @@ if (isset($_FILES["fileThesis"])) {
             }
         
         mysql_close($con);
-
+echo "3";
 
         if ($result == "DONE") { //If database operation was successful.
             $file_exist = FALSE;
@@ -100,10 +100,11 @@ if (isset($_FILES["fileThesis"])) {
                                  </ul>';
         }
     }
+echo "4";
     //******** REMOVE PERMISSION IF UPLOADING SUCCESSFULL***************************
     if ($finalResult == TRUE) {
         $result = "NONE";
-        require '../../../config/connect.php';
+        require '../config/connect.php';
             $sql_inner = 'UPDATE projectmanager.student set `permission`="NO" where user_nm="' . $_SESSION["user_nm"] . '"';
             mysql_query($sql_inner);
             if (mysql_affected_rows() >= 1) {
@@ -114,5 +115,6 @@ if (isset($_FILES["fileThesis"])) {
     }
     $_SESSION['queryString'] = $pageResultString;
     header("Location: " . constant("HOST11") . "/user_result.php");
+echo "5";
 }
 ?>

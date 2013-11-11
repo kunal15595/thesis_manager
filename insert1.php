@@ -10,12 +10,14 @@ $query="INSERT INTO list
 	`ref_id`
     , `user_id`
     , `role`
+    , `user_nm`
     
 )
 SELECT 
     NULL
     , user_nm
-    , 'std'  
+    , 'std'
+    , `name`  
 FROM `student` ";
 
 if($query_run=mysql_query($query)){

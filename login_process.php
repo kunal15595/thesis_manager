@@ -1,6 +1,7 @@
-<?php
+ <?php
     session_start();
      require_once 'config/config.php';
+     require_once 'config/connect.php';
      require_once 'config/pattern.php';
 
         $pageStatus = "NEW";
@@ -43,15 +44,13 @@
 
         //die('bhag saalA');
     if ($pageStatus == "REQUESTED") {
-        $pass_hashed=md5($pass);
         $result = "NOTFOUND";
         require_once 'config/connect.php';
             if($user_type=="std") {
-                $sql = "SELECT * FROM student,advisor WHERE student.advisor_id=advisor.advisor_id AND user_nm='" . $user_nm . "' AND `student`.`password_hashed`='" . $pass_hashed . "'";
+                $sql = "SELECT name,roll_number,class,pass_changed,permission,advisor_name FROM student,advisor WHERE student.advisor_id=advisor.advisor_id AND user_nm='" . $user_nm . "' and password='" . $pass . "'";
                 $rs = mysql_query($sql);
-                while ($row = mysql_fetch_array($rs)) {
+                while ($row = mysql_fetch_assoc($rs)) {
                     $result = "FOUND";
-                    //$pageStatus=1;
                     session_start();
                     $_SESSION['user_nm'] = $user_nm;
                     $_SESSION['name'] = $row['name'];
@@ -69,6 +68,7 @@
                     session_start();
                     $_SESSION['user_nm'] = $user_nm;
                     $_SESSION['name'] = $row['advisor_name'];
+                    
                 }
             }else if($user_type=="adm") {
                 $sql = "SELECT name,role FROM users WHERE user_nm='" . $user_nm . "' and password='" . $pass . "'";

@@ -1,6 +1,9 @@
+hg
 <?php
+require_once '../config/config.php';
+require_once '../config/pattern.php';
         $pageStatus = "NEW";
-        if (isset($_POST['txtUserNm']) && isset($_POST['txtPass'])) {
+      if (isset($_POST['txtUserNm']) && isset($_POST['txtPass'])) {
         if (!empty($_POST['txtUserNm']) && !empty($_POST['txtPass'])) {
            
            $user_nm = $_POST['txtUserNm'];
@@ -9,12 +12,12 @@
            if (!preg_match(getUserNamePattern(), $user_nm)){
                $pageStatus = "INVALID_USERNAME";
            }
-           elseif (!preg_match(getPasswordPattern(), $pass)) {
+           else if (!preg_match(getPasswordPattern(), $pass)) {
                $pageStatus = "INVALID_PASSWORD";
            } 
            else {
                $pageStatus = "REQUESTED";
-           }
+           } 
         }
         else{
             $pageStatus = "INCOMPLETE";
@@ -25,13 +28,16 @@
 //                $pageStatus = "INVALID";
 //            }
 //        }
+
+    
     ?>
-    <script type="text/javascript" src="alert.js"></script>
+    gh
+    <!-- // <script type="text/javascript" src="alert.js"></script> -->
 
     <?php
         if ($pageStatus == "REQUESTED") {
             $result = "NOTFOUND";
-            require '../../../config/connect.php';
+            // require '../config/connect.php';
                 $sql = "SELECT name,role FROM users WHERE user_nm='" . $user_nm . "' and password='" . $pass . "'";
                 $rs = mysql_query($sql);
                 while ($row = mysql_fetch_assoc($rs)) {
@@ -47,6 +53,8 @@
                 header("Location: " . constant("HOST11") . "/Backend/index.php");
             } else {
                 $pageStatus = "INVALID";
+                header("Location: " . constant("HOST11") . "/Backend/index.php");
             }
         }
+        // header("Location: " . constant("HOST11") . "/Backend/index.php");
         ?>

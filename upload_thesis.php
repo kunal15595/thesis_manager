@@ -11,9 +11,11 @@
         $pageResult = "NONE";
         if ($_SESSION['pass_changed'] == "NO") {
             $pageResult = "PASS_NOT_CHANGED";
-        } else if ($_SESSION['permission'] == "NO") {
+        } 
+        else if ($_SESSION['permission'] == "NO") {
             $pageResult = "NO_PERMISSION";
-        } else {
+        } 
+        else {
             $result = getLastDate($_SESSION['class']);
             if ($result == "DONE") {
                 $pageResult = "DONE";
@@ -40,7 +42,7 @@
             </div>
             <div id="adminMiddle">
                 <?php
-                if($pageResult == "PASS_NOT_CHANGED"){
+                if(2==1){
                     echo '<div style="color: green;font-size: 28px; text-align: center;width: 100%">****Welcome, ' . strtoupper($_SESSION['name']) . '****</div>';
                     echo '<div style="padding-left: 50px; font-size: 20px; color: red"><br/><br/><br/><br/><br/><b>Sorry you are late</div>';
                     echo '<br/>The application is now closed. Contact admin in case of any problem.';
@@ -131,14 +133,29 @@
                                 </tr>
                                 <tr><td colspan="2" style="height: 15px"></td></tr>
                                 <tr>
-                                    <td style="width: 20%"><div style="text-align: left;color: blue;font-weight: bold">Upload Thesis : </div></td>
-                                    <td style="width: 80%">
+                                    <td style="width: 20%"><div style="text-align: left;color: blue;font-weight: bold">Upload Thesis (PDF): </div></td>
+                                    <td style="width: 30%">
                                         <div style="text-align: left">
                                             <input type="file" name="fileThesis" value="" />
+                                             
     <!--                                            <input type="hidden" name="MAX_FILE_SIZE" value="5000000"/>-->
                                             <span style="color: green;padding-left: 20px">(Upload only in PDF format.)</span>
                                         </div>
                                     </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 20%"><div style="text-align: left;color: blue;font-weight: bold">Upload Thesis (TXT): </div></td>
+                                    <td style="width: 30%">
+                                        <div style="text-align: left">
+                                            
+                                             <input type="file" name="fileThesisTxt" value="" />
+    <!--                                            <input type="hidden" name="MAX_FILE_SIZE" value="5000000"/>-->
+                                            <span style="color: green;padding-left: 20px">(Upload only in TXT format.)</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <?php include 'categories.php'; ?>
                                 </tr>
                                 <tr><td colspan="2" style="height: 15px"></td></tr>
                                 <tr>

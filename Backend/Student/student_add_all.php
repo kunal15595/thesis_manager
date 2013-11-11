@@ -4,7 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <?php include '../../config/config.php'; ?>
         <?php 
-        //require '../check_session.php';
+        require '../check_session.php';
         ?>
 
         <link rel="stylesheet" href="<?php echo constant("HOST11") . '/web/css/AdminStyleSheet.css' ?>" type="text/css" />

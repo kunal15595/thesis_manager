@@ -5,7 +5,7 @@
         <?php 
         include '../../config/config.php'; 
         include '../PhpIncludeFiles/Database/AdminStudentManager.php';
-        //require '../check_session.php';
+        require '../check_session.php';
 
         <link rel="stylesheet" href="<?php echo constant("HOST11") . '/web/css/AdminStyleSheet.css' ?>" type="text/css" />
         <link rel="stylesheet" href="../../web/css/adminStudentStyleSheet.css" type="text/css" />

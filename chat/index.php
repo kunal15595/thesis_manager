@@ -76,7 +76,7 @@ $chat = new chat();
 					</div>
 					<div id="message" class="chat">
 						<div>
-							<div class="messages">
+							<div id="scroll" class="messages">
 								<div class="message">
 									<!-- <a href="#">kunal</a> says:
 									<p>dvsdfvsfdvfdv</p> -->

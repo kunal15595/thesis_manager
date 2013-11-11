@@ -27,7 +27,7 @@ if(!empty($search_term))
 			$query = "SELECT `name` FROM `users` WHERE `name` LIKE '%".mysql_real_escape_string($search_term)."%'";			
 			break;
 		case 'fac':
-			$query = "SELECT `advisor_name` FROM `advisor` WHERE `advisor_name` LIKE '%".mysql_real_escape_string($search_term)."%'";
+			$query = "SELECT `advisor_name` AS `name` FROM `advisor` WHERE `advisor_name` LIKE '%".mysql_real_escape_string($search_term)."%'";
 			break;
 		case 'std':
 			$query = "SELECT `name` FROM `student` WHERE `name` LIKE '%".mysql_real_escape_string($search_term)."%'";
