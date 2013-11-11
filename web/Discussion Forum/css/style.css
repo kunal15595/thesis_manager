@@ -1,0 +1,42 @@
+body {
+	font: 0.8em Arial;
+	background-color: #fff;
+	height: 100%;
+}
+
+#bodyPanel{
+	background-color: #fff;
+}
+
+#rightPanel{
+	vertical-align: top;
+	position: relative;
+	background-color: #444;
+	border-radius: 7px;
+	border: 3px solid #ab3;
+	/*width: 360px;*/
+	width: 39%;
+	/*height: 645px;*/
+	height: 100%;
+	display: inline-block;
+}
+#adminVMenu{
+	position: relative;
+	width: 12%;
+	
+	display: inline-block;
+}
+#adminMiddle{
+	position: relative;
+	width: 46%;
+	
+	display: inline-block;
+}
+
+/*
+#whole{
+	background-color: #fff;
+	width: 100%;
+	min-width: 400px;
+	border: 1px solid blue;
+}*/
