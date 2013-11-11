@@ -1,5 +1,5 @@
 <?php
-require '../config/congig.php';
+require '../config/config.php';
 require '../config/connect.php';
 header('Content-Type: text/xml');
 echo '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>';
@@ -13,7 +13,7 @@ if(isset($_POST['Input_Ans'])==true&&!empty($_POST['Input_Ans'])){
 	$result=mysql_query($query);
 	$row=mysql_fetch_array($result);
 	//echo $row['security_question_ans'];
-	if($row['security_question_ans']==$input_ans)
+	if(strtolower($row['security_question_ans'])==strtolower($input_ans))
 		echo "Correct answer";
 	else
 		echo "wrong answer";

@@ -1,6 +1,16 @@
 <?php
-require '../config/congig.php';
+///////////////////////////////////
+require '../config/config.php';
+//////////////////////////////////
+    // if (!($con = mysql_connect(constant("HOSTNAME"), constant("USERNAME"), constant("PASS")))) {
+    //     $result = "SERVER_CONNECTION_ERROR";
+    //     die($result);
+    // } else if (!($select = mysql_select_db(constant("DBNAME"), $con))) {
+    //     $result = "DB_CONNECTION_ERROR";
+    //      die($result);
+    // } 
 require '../config/connect.php';
+/////////////////////////////////////
 header('Content-Type: text/xml');
 echo '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>';
  echo '<responce>';
@@ -22,8 +32,6 @@ if(isset($_POST['User_Id'])==true&&!empty($_POST['User_Id'])){
 		$sec_ques_row=mysql_fetch_array($sec_ques_result);
 		$sec_ques=$sec_ques_row['security_ques'];
 		echo $sec_ques;
-		
-	
 	}
 }else{
 	echo "User ID field cannot be empty";
