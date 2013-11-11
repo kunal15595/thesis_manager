@@ -8,9 +8,7 @@
 include '../../../../config/config.php';
 
 session_start();
-if (!isset($_SESSION['admin_user_nm'])) {
-    header("Location: " . constant("HOST11") . "/Backend/login.php");
-}
+include '../../../check_session.php';
 
 include '../../CommonFunctions.php';
 $result = "NONE";

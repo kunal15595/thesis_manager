@@ -8,8 +8,7 @@
 define("HOST11", "http://localhost/ProjectUploader");
 define("HOSTNAME", "localhost");
 define("USERNAME", "root");
-define("PASS", "shubham@781039");
+define("PASS", "kunal");
 define("DBNAME", "project");
 
 ?>
-

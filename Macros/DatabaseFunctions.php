@@ -35,7 +35,7 @@ function getAllAdvisors() {
 
 function getLastDate($class) {
     $result;
-    include_once '../config/connect.php';
+    include_once 'config/connect.php';
         $sql = "SELECT last_date from schedule where class='" . $class . "'";
         $result = mysql_query($sql);
         $flag = FALSE;

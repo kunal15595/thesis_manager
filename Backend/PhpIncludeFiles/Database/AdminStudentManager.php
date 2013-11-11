@@ -126,7 +126,7 @@ function isInCorrectFormat($line) {
 
 function getAllStudents($class) {
     $result;
-    require '../../../config/connect.php';
+    require '../../config/connect.php';
     $sql = "SELECT name,roll_number,user_nm,password from student where class='" . $class . "'";
     $result = mysql_query($sql);
     $flag = FALSE;

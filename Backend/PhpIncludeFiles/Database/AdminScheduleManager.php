@@ -7,7 +7,7 @@
 //Contact at: tapan84silchar[at]gmail.com
 function getAllSchedules(){
     $result;
-    require '../../../config/connect.php';
+    require '../../config/connect.php';
     $sql = "SELECT class,last_date  FROM schedule";
     $result = mysql_query($sql);
     $flag = FALSE;

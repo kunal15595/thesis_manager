@@ -15,35 +15,17 @@ function isInFileFormat($fileName, $format) {
     return FALSE;
 }
 
-function changePasswd($pass, $pass1,$sec_ques_id, $sec_ques_ans) {
-    $result='dfkgd';
-    $table;
+function changePasswd($pass, $pass1) {
+    $result;
     session_start();
     $userName = $_SESSION['user_nm'];
-    $userType=$_SESSION['user_type'];
-    switch ($userType) {
-        case 'fac':
-            $table='advisor'; 
-            break;
-        case 'std':
-            $table='student'; 
-            break;
-    }
-    $old_pass_query="SELECT * FROM $table WHERE `user_nm` ='$userName'  ";
-    $old_pass_row=mysql_fetch_array(mysql_query($old_pass_query));
-    $old_pass=$old_pass_row['password_hashed'];
-    if ((!preg_match(getPasswordPattern(), $pass )) || (!preg_match(getPasswordPattern(), $pass1 ))) {
+    require 'config/config.php';    
+    require 'config/connect.php';
+    if ((!preg_match(getPasswordPattern(), $pass)) || (!preg_match(getPasswordPattern(), $pass1))) {
         $result = "INVALID";
-    }else if(md5($pass)!=$old_pass){
-        // $result=$old_pass;
-        $result="Current password not matched";
     } else {
-        $password=md5($pass1);
-        $sql = "UPDATE $table SET `security_question_id`='$sec_ques_id',`security_question_ans`='$sec_ques_ans',`password_hashed`='$password',`pass_changed`='YES',`pass_changed_at`='" . date("Y-m-d") . "',`last_modified_by`='" . $_SESSION['name'] . "[" . $userName . "]' WHERE `user_nm` ='$userName'";
-        // $sql="UPDATE `%{$table}%` SET security_question_id='%{$sec_ques_id}%',security_question_ans='%{$sec_ques_ans}%',password_hashed='%{$password}%',pass_changed='YES' WHERE user_nm='%{$userName}%'";  
-        //$sql = "UPDATE `student` SET  `security_question_id` =  '1' WHERE 1"; 
+        $sql = "UPDATE student SET password='$pass1',pass_changed='YES',pass_changed_at='" . date("Y-m-d") . "',last_modified_by='" . $_SESSION['name'] . "[" . $userName . "]' WHERE user_nm='$userName'";
         $result = mysql_query($sql);
-
         if (mysql_affected_rows() >= 1) {
             $result = "DONE";
         } else {

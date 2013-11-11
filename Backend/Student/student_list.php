@@ -3,8 +3,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <?php include '../../config/config.php'; ?>
-        <?php require '../PhpIncludeFiles/Database/AdminStudentManager.php'; ?>
-        <?php require '../check_session.php';?>
+        <?php include '../PhpIncludeFiles/Database/AdminStudentManager.php'; ?>
+        <?php include '../check_session.php';?>
         
         <link rel="stylesheet" href="<?php echo constant("HOST11") . '/web/css/AdminStyleSheet.css' ?>" type="text/css" />
         <link rel="stylesheet" href="../../web/css/adminStudentStyleSheet.css" type="text/css" />

@@ -17,7 +17,7 @@ body {
 	height: 30%;
 	padding: 10px;
 	overflow-y: scroll;
-	
+	max-height: 150px;
 	color: black;
 	
 	text-align: left;

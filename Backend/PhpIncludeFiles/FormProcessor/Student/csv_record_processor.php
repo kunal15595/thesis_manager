@@ -11,9 +11,7 @@ require '../../../../config/config.php';
 
 //Forward to login page if not authenticated.
 session_start();
-if (!isset($_SESSION['admin_user_nm'])) {
-    header("Location: " . constant("HOST11") . "/Backend/login.php");
-}
+include '../../../check_session.php';
 
 $resultString="";
 if(isInFileFormat($_FILES["fileCSV"]["name"], "csv")){

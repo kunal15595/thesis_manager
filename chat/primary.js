@@ -1,11 +1,12 @@
 $(window).load(function() {
 	$('.result').hide();
 	$('.chat').hide();
+	
 });
 
 $(document).ready(function() {
 	var select_value=std;
-
+	
 	$(function() 
 	{ $('.autosuggest').on('keyup', 
 		function(e) 
@@ -46,7 +47,7 @@ $(document).ready(function() {
 	});
 
 	$('.autosuggest').click(function() {
-		select_value = $('.select').val()
+		select_value = $('.select').val();
 		var result_value = $(this).text();
 		//alert(result_value);
 		$('.autosuggest').prop('value',result_value);
@@ -66,10 +67,12 @@ $(document).ready(function() {
 
 	$('#chat').click(function() {
 		if ($('#chat').val()=='Start') {
-			$('.autosuggest').prop('value','');
+			//$('.autosuggest').prop('value','');
 			$('.chat').show();
 			$('#chat').prop('value','Stop');
+			$('.autosuggest').prop('disabled',true);
 		} else {
+			$('.autosuggest').prop('disabled',false);
 			$('#chat').prop('value','Start');
 			$('#chat').prop('disabled', true);
 			$('.chat').hide();

@@ -1,34 +1,42 @@
 <?php
 
 //echo "chat";
+// require_once 'core.php';
 
 class chat extends core
 {
-	public function fetchMessage($ref_id)
+	// public $countt;
+	public function fetchMessage($ref_id, $to_id)
 	{
-		//query db
-		$this->query("
-			SELECT 		`chat`.`message`,
-						`list`.`ref_id`,
-						`list`.`user_id`
-			FROM 		`chat`
-			JOIN 		`list`
-			ON 			`chat`.`to_id` = `list`.`user_id` OR  `chat`.`from_id` =  `list`.`user_id` 
-			ORDER BY 	`chat`.`datetime`
-			DESC
-		");
-		//return rows
-		return $this->rows();
+		//extract messages
+		$query = " SELECT DISTINCT chat.message, chat.from_id, chat.to_id, list.ref_id, list.user_id
+		 	FROM chat
+		 	JOIN list ON (list.ref_id = chat.from_id OR list.ref_id = chat.to_id)
+		 	WHERE (to_id ='". mysql_real_escape_string( $ref_id ) ."' 
+		 		AND from_id ='". mysql_real_escape_string( $to_id ) ."') 
+		 	OR (to_id ='". mysql_real_escape_string( $to_id ) ."' 
+		 		AND from_id ='". mysql_real_escape_string( $ref_id ) ."')
+		 ";
+			$query_run=mysql_query($query);
+			$num_result=mysql_num_rows($query_run);
+		
+		return $query_run;
+
+		
 	}
 
-	public function throwMessage($user_id, $message, $from_id, $to_id)
+	public function throwMessage( $message, $ref_id, $to_id)
 	{
 		//insert into db
-		$this->query("
-				INSERT INTO `chat` (`message_id`, `message`, `datetime`, `from_id`, `to_id`)
-				VALUES (" . (int)$user_id . ", '" . $this->db->real_escape_string(htmlentities($message)) . "', UNIX_DATETIME(), )
 
-			");
+		$query = " INSERT INTO `chat` (`message`, `from_id`, `to_id`, `datetime`)
+				VALUES ('". mysql_real_escape_string( $message ) ."',  '". mysql_real_escape_string( $ref_id ) ."','". mysql_real_escape_string( $to_id ) ."', CURRENT_TIMESTAMP )
+				";
+		$query_run=mysql_query($query);
+		$num_result=mysql_num_rows($query_run);
+		
 	}
+
+	
 }
 ?>
