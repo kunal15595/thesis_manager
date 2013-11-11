@@ -92,6 +92,7 @@
                             </tr>
                         </table>
                     </form>
+                    <div id="ForgotPassword"><a href="Forgot_password/ForgotPassword.php">Forgot Password</a></div>
                 </div>
             </div>
             <div id="adminFooter">

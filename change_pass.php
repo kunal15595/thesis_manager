@@ -3,9 +3,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <?php include 'config/config.php'; ?>
-        <?php include 'config/connect.php'; ?>
         <?php include 'session_check.php'; ?>
-        <?php require 'change_pass_process.php'; ?>
+        <?php require 'change_pass_process.php'; ?>        
+        <?php require 'config/connect.php'; ?>
         
         <link rel="stylesheet" href="<?php echo constant("HOST11") . '/web/css/UserStyleSheet.css' ?>" type="text/css" />
         <title>Online Manager</title>
@@ -51,11 +51,42 @@
                                     <input type="password" name="newPass2" id="newPass2" value="" size="30" onblur="comparePass()"/>
                                 </td>
                             </tr>
-                            <tr>
-                                <td colspan="2" align="right">
-                                    <input type="submit" value="Submit" id="btnPasswd" name="btnSubmit" disabled="true" />
-                                </td>
-                            </tr>
+                            <tbody id="security_display">
+                                <tr>
+                                    <td colspan="2" align="right">
+                                        <input type="button" value="Submit" id="sec_btn" disabled="true" onclick="sec_tbody_display()" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody id="security_tbody" style="display:none">
+                                <tr>
+                                    <td align="right"><div style="font-size: 18px;color: blue;text-align: right">Security Question: </div></td>
+                                    <td>
+                                        <select id="sec_ques" name="sec_ques">
+                                            <?php
+                                                $select_query= 'SELECT * FROM `security_question` ';
+                                                $result=mysql_query($select_query);
+                                                $i=1;
+                                                while($row=mysql_fetch_array($result)){
+                                                    echo "<option value='".$i."'>".$row['security_ques']."</option>";
+                                                    $i++;
+                                                }
+                                            ?>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right"><div style="font-size: 18px;color: blue;text-align: right">Answer: </div></td>
+                                    <td>
+                                        <input type="text" name="security_ans" id="security_ans" value="" size="30" onblur="is_all_filled()">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" align="right">
+                                        <input type="submit" value="Submit" id="btnPasswd" name="btnSubmit" disabled="true" />
+                                    </td>
+                                </tr>
+                            </tbody>
                             <tr>
                                 <td id="errorTD" colspan="2" align="right" style="font-style: italic;color: red">
                                     <?php echo $error;?>

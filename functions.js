@@ -34,20 +34,39 @@ function comparePass(){
     var pass=document.getElementById("currentPass");
     var pass1=document.getElementById("newPass1");
     var pass2=document.getElementById("newPass2");
-    var btn=document.getElementById("btnPasswd");
+    //var btn=document.getElementById("btnPasswd");
     var errorTD=document.getElementById("errorTD");
+    var security_tbody=document.getElementById("security_tbody");
     if(pass1.value!=pass2.value){
         if((pass1.value!="" && pass2.value!=""))
         {
             errorTD.innerHTML='<font color="red">Password did not matched.</font>';
         }
-        btn.disabled=true;
+        sec_btn.disabled=true;
+        //security_tbody.style.display='none';
     }else{
         errorTD.innerHTML='<font color="green">Password matched.</font>';
         if(pass.value!=""){
-            btn.disabled=false;
+            sec_btn.disabled=false;
+            //security_tbody.style.display='true';
+            //is_filled_sec_ans();
+            //btn.disabled=false;
         }
     }
+}
+
+function sec_tbody_display(){
+    var sec_btn=document.getElementById("sec_btn");
+    var security_tbody=document.getElementById("security_tbody");
+    sec_btn.style.display="none";
+    security_tbody.style.display="block";
+}
+
+function is_all_filled(){
+var btn=document.getElementById("btnPasswd");
+var security_ans=document.getElementById("security_ans").value;
+if(security_ans!="")
+    btn.disabled=false;
 }
 
 var errorString="";
