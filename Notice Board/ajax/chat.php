@@ -24,26 +24,22 @@ if (isset($_POST['method']) === true && empty($_POST['method']) === false ) {
 
 	if($method ==='fetch') {
 		
-		$query_run2 = $chat->fetchMessage($ref_id, $to_id);
+		$query_run2 = $chat->fetchMessage();
 		if (mysql_num_rows($query_run2)==0) {
 			echo "There are currently no messages in the inbox";
 		}
 		else{
 			while ($query_row2=mysql_fetch_assoc($query_run2)) {
-				if ($query_row2['ref_id']==$ref_id ) {
+				
 					?>
 						<div class="message">
-							<a href="#" ><?php if ($query_row2['from_id']==$ref_id) {
-												echo $_SESSION['name'];
-											  }
-											 else{
-													echo $to_nm;
-											} ?></a> : 
-							<p><?php echo $query_row2['message']; ?></p>
+							<p><?php echo $query_row2['body']; ?></p>
+							<p><?php echo $query_row2['posted_by']; ?></p>
+							<p><?php echo $query_row2['post_to']; ?></p>
 							
 						</div>
 					<?php
-				}
+				
 			}
 		}
 		

@@ -20,8 +20,8 @@ class chat extends core
 			 ";
 				$query_run=mysql_query($query);
 				$num_result=mysql_num_rows($query_run);
-			
-			return $query_run_std;
+				echo $num_result;
+			return $query_run;
 		}
 		else if($user_type=="fac")
 		{

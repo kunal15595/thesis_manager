@@ -32,7 +32,7 @@ chat.throwMessage = function(message) {
 			type: 'post',
 			data: { method: 'throw', message: message , to_nm: to_nm  },
 			success: function(data) {
-				alert(data);
+				// alert(data);
 				chat.fetchMessage();
 				chat.entry.val('');
 			}

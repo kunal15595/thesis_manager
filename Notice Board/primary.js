@@ -1,6 +1,6 @@
 $(window).load(function() {
-	$('.result').hide();
-	$('.chat').hide();
+	// $('.result').hide();
+	// $('.chat').hide();
 });
 
 $(document).ready(function() {
@@ -11,8 +11,8 @@ $(document).ready(function() {
 		function(e) 
 		{ 
 			if ($('.autosuggest').val()='') {
-				$('.result').hide();
-			  	$('.dropdown').hide();
+				// $('.result').hide();
+			 //  	$('.dropdown').hide();
 			}
 		});
 
@@ -25,8 +25,8 @@ $(document).ready(function() {
 			$('.dropdown').show();
 		}
 		else{
-			$('.result').hide();
-	  		$('.dropdown').hide();
+			// $('.result').hide();
+	  // 		$('.dropdown').hide();
 		}
 		var search_term = $(this).prop('value');
 		//alert($('.select').val());
@@ -60,13 +60,13 @@ $(document).ready(function() {
 	});
 
 	$(document).click(function() {
-		$('.result').hide();
-	  	$('.dropdown').hide();
+		// $('.result').hide();
+	 //  	$('.dropdown').hide();
 	});
 
 	$('#chat').click(function() {
 		$('.chat').show();
-		$('#chat').prop('disabled', true);
+		// $('#chat').prop('disabled', true);
 	});
 
 	$('#exit').click(function() {
