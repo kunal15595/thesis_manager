@@ -5,3 +5,4 @@
 <div id="adminVMenuItem"><a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/chat/index.php'?>">Messages</a></div>
 <div id="adminVMenuItem"><a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/Discussion Forum/Discuss.php'?>">Discussion Forum</a></div>
 <div id="adminVMenuItem"><a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/Notice Board/index.php'?>">Notice Board</a></div>
+<div id="adminVMenuItem"><a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/user_profile/user_profile.php'?>">User Profile</a></div>
