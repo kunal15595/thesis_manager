@@ -10,7 +10,6 @@ if (isset($_POST['method']) === true && empty($_POST['method']) === false ) {
 		
 		if(isset($_POST['message']) === true){$message = trim($_POST['message']);}
 		
-
 		$variable = mysql_real_escape_string($user_id);
 		$query = "SELECT `ref_id`,`user_id` FROM `list` WHERE `user_id` LIKE '%{$variable}%'";
 			$query_run=mysql_query($query);
@@ -34,25 +33,29 @@ if (isset($_POST['method']) === true && empty($_POST['method']) === false ) {
 					?>
 						<div class="message">
 							<p><?php echo $query_row2['body']; ?></p>
-							<p><?php echo $query_row2['posted_by']; ?></p>
-							<p><?php echo $query_row2['post_to']; ?></p>
-							
+							<a href="#" id="right"><?php echo $query_row2['posted_by']; ?></a>
 						</div>
-					<?php
-				
+					<?php	
 			}
 		}
-		
 	}
 	
 	else if ($method === 'throw') {
 	//throw message into database
 		
 		$body = trim($_POST['message']);
+		$post_to = trim($_POST['post_to']);
+		$posted_by = $_SESSION['name'];
+	?>
+		<p><?php echo $body; ?></p>
+		<p><?php echo $post_to; ?></p>
+		<p><?php echo $posted_by; ?></p>
 		
+	<?php	
 		if (empty($message) === false) {
 			
 			$chat->throwMessage($body, $posted_by, $post_to, $priority);
+			// $chat->throwMessage("sdfc", "Edsf", "std", 0);
 			
 		}
 		

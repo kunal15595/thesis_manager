@@ -54,15 +54,22 @@ $chat = new chat();
 			    
 				<div id="rightPanel">
 					<div id="select">
+					<?php if($_SESSION['user_type']!='std'){
+					?>
 					    <div id="send_to">Post To :
 				            <select class="select" name="user_type" >
 				                <?php include 'send.php'; ?>
 				            </select>
 				        </div>
-				        
+				    <?php }
+				    ?>
 					    <div id="compose">
-			    			<input id="chat" type="button" value="Compose" placeholder="Compose" />
-			    			<input id="view" type="button" value="View" placeholder="View" />
+					    	<?php if($_SESSION['user_type']!='std'){
+					    	?>
+			    				<input id="chat" type="button" value="Compose" />
+			    			<?php }
+			    			?>
+			    			<input id="view" type="button" value="View" />
 			    		</div>
 					    <br/>
 					</div>
@@ -76,6 +83,9 @@ $chat = new chat();
 							</div> 
 						</div>
 						
+					</div>
+					<div class="entry">
+						<textarea id="posting"  placeholder="Post here...     Press Enter for new line.  Use Shift + Enter to submit"></textarea>
 					</div>
 				</div>
 			</div>

@@ -1,72 +1,36 @@
 $(window).load(function() {
-	// $('.result').hide();
-	// $('.chat').hide();
+	$('.chat').hide();
+	$('.entry').hide();
+
 });
 
 $(document).ready(function() {
-	var select_value=std;
+	var select_value='std';
 
-	$(function() 
-	{ $('.autosuggest').on('keyup', 
-		function(e) 
-		{ 
-			if ($('.autosuggest').val()='') {
-				// $('.result').hide();
-			 //  	$('.dropdown').hide();
-			}
-		});
-
+	$('#view').click(function() {
+		$('.chat').show();
+		$('.entry').hide();
+		$('#view').prop('disabled', true);
+		$('#chat').prop('disabled', false);
 	});
-
-	$('.autosuggest').keyup(function(e) {
-
-		if ($('.autosuggest').val()!='') {
-			$('.result').show();
-			$('.dropdown').show();
-		}
-		else{
-			// $('.result').hide();
-	  // 		$('.dropdown').hide();
-		}
-		var search_term = $(this).prop('value');
-		//alert($('.select').val());
+	$('#chat').click(function() {
 		
-
-		$.post('search.php', {search_term:search_term, select_value:select_value}, function(data) {
-			$('.result').html(data);
-
-			$('.result li').click(function() {
-				var result_value = $(this).text();
-				//alert(result_value);
-				$('.autosuggest').prop('value',result_value);
-				$('.result').html('');
-				$('#chat').prop('disabled', false);
-			});
-		});
+		$('.entry').show();
+		$('.chat').hide();
+		$('#chat').prop('disabled', true);
+		$('#view').prop('disabled', false);
 	});
 
-	$('.autosuggest').click(function() {
-		select_value = $('.select').val();
-		var result_value = $(this).text();
-		//alert(result_value);
-		$('.autosuggest').prop('value',result_value);
-		$('.result').html('');
-	});
+	// $('.entry').keyup(function(e) {
+	// 	alert($('#posting').val());
+	// });
 
-	$('#std, #adm, #fac').click(function() {
+
+	$('#std, #adm, #fac, #all, #stdme').click(function() {
 		select_value = $(this).val();
+		$('.select').prop(value, select_value);
 		//alert(select_value);
 		//alert($('.select').val());
-	});
-
-	$(document).click(function() {
-		// $('.result').hide();
-	 //  	$('.dropdown').hide();
-	});
-
-	$('#chat').click(function() {
-		$('.chat').show();
-		// $('#chat').prop('disabled', true);
 	});
 
 	$('#exit').click(function() {

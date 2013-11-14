@@ -16,16 +16,19 @@ chat.fetchMessage = function () {
 }
 
 chat.throwMessage = function(message) {
-	
+	var post_to = $('.select').val();
+	// post_to = select_value;
+	alert(message);
+	// alert(post_to);
 	if ($.trim(message).length!=0) {
 		$.ajax({
 			url:'ajax/chat.php',
 			type: 'post',
-			data: { method: 'throw', message: message },
+			data: { method: 'throw', message: message, post_to: post_to },
 			success: function(data) {
 				alert(data);
 				chat.fetchMessage();
-				chat.entry.val('');
+				// chat.entry.val('');
 			}
 		});
 			
@@ -34,17 +37,16 @@ chat.throwMessage = function(message) {
 
 
 
- chat.entry = $('.chat .entry');
-
 $(function() 
-{ $('.chat .entry').on('keydown', 
+{ $('.entry').on('keydown', 
 	function(e) 
 	{ 
-		//alert("ok");
+		// alert("ok");
 		if(e.which===13 && e.shiftKey === true){
-			// alert($('.chat .entry').val());
+			// alert("ok");
+			alert($('.entry').val());
 			//throw message
-			chat.throwMessage($('.chat .entry').val());
+			chat.throwMessage($('#posting').val());
 			e.defaultPrevented ;
 		}
 	});

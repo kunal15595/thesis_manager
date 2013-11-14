@@ -2,24 +2,26 @@
 switch ($_SESSION['user_type']) {
 	case 'adm':
 			?>
-				<option id="std" value="std" selected>All</option>
+			<div class="select">
+				<option id="std" value="all" selected>All</option>
 				<option id="fac" value="fac" >Faculty</option>
-				<option id="adm" value="adm">Students</option>
+				<option id="adm" value="std">Students</option>
+			</div>
 			<?php
 		break;
 	case 'fac':
 			?>
-				<option id="std" value="std" selected>All</option>
-				<option id="fac" value="fac" >Faculty</option>
-				<option id="adm" value="adm">Student</option>
-				<option id="adm" value="adm">Students under me</option>
+			<div class="select">
+				<option id="std" value="all" selected>All</option>
+				<option id="adm" value="stdme">Students under me</option>
+			</div>
 			<?php
 		break;
 	case 'std':
 			?>
-				<option id="std" value="std" selected>Student</option>
-				<option id="fac" value="fac" >Faculty</option>
-				<option id="adm" value="adm">Admin</option>
+			<div class="select">
+				
+			</div>
 			<?php
 		break;
 	

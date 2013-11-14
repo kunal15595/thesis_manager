@@ -78,6 +78,7 @@ $(document).ready(function() {
 			$('.chat').hide();
 		}
 	});
+	
 
 	$('#exit').click(function() {
 		var path='ll';

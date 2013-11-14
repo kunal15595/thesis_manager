@@ -13,40 +13,40 @@ class chat extends core
 		//extract messages
 		if($user_type=="std")
 		{
-			$query = " SELECT DISTINCT body, datetime, priority, posted_by, post_to , advisor_id
-			FROM notice, student
-			WHERE  post_to='". all ."' OR student.advisor_id=posted_by
+			$query = " SELECT DISTINCT body, datetime, priority, posted_by, post_to 
+			FROM notice
+			JOIN student ON (student.advisor_id=posted_by AND student.user_nm='". $user_nm ."') OR post_to='". all ."' OR post_to='". std ."' 
+			
 			ORDER BY datetime DESC
 			 ";
 				$query_run=mysql_query($query);
 				$num_result=mysql_num_rows($query_run);
-				echo $num_result;
+				// echo $num_result;
 			return $query_run;
 		}
 		else if($user_type=="fac")
 		{
-			$query_std = " SELECT body, datetime, priority, posted_by, post_to
+			$query = " SELECT DISTINCT body, datetime, priority, posted_by, post_to
 			 	FROM notice
-			 	WHERE post_to='". $user_type ."' OR posted_by='". mysql_real_escape_string( $user_nm ) ."'
+			 	WHERE post_to='". all ."' OR post_to='". fac ."' OR posted_by='". mysql_real_escape_string( $user_nm ) ."'
 			 	ORDER BY datetime DESC
 			 ";
-				$query_run_std=mysql_query($query_std);
-				$num_result=mysql_num_rows($query_run_std);
+				$query_run=mysql_query($query);
+				$num_result=mysql_num_rows($query_run);
 			
-			return $query_run_std;
+			return $query_run;
 		}
 		else if($user_type=="adm")
-		$query_std = " SELECT body, datetime, priority, posted_by, post_to
+		$query = " SELECT DISTINCT body, datetime, priority, posted_by, post_to
 		 	FROM notice
 		 	ORDER BY datetime DESC
 		 ";
-			$query_run_std=mysql_query($query_std);
-			$num_result=mysql_num_rows($query_run_std);
+			$query_run=mysql_query($query);
+			$num_result=mysql_num_rows($query_run);
 		
-		return $query_run_std;
+		return $query_run;
 
-		//SELECT DISTINCT body, datetime, priority, posted_by, post_to FROM notice JOIN student ON student.advisor_id=posted_by ORDER BY datetime DESC
-	}
+		}
 
 	public function throwMessage($body, $posted_by, $post_to, $priority)
 	{
