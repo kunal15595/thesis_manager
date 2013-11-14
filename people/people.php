@@ -2,10 +2,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <?php include 'config/config.php'; ?>
-        <?php include 'session_check.php'; ?>
+        <?php include '../config/config.php'; ?>
+        <?php include '../session_check.php'; ?>
         <link rel="stylesheet" href="<?php echo constant("HOST11") . '/web/css/UserStyleSheet.css' ?>" type="text/css" />
-        
+        <link rel="stylesheet" href="style.css" type="text/css" />
         <title>Online Thesis Manager</title>
     </head>
     <body>
@@ -16,17 +16,14 @@
                 </div>
                 <div id="adminHeaderLocation">Department of CSE, IIT Guwahati</div>
             </div>
-            <?php //include 'session_check.php'; ?>
+            
             <div id="middle">
                 <div id="adminVMenu">
-                    <?php include 'Macros/VerticalMenuItems.php'; ?>
+                    <?php include '../Macros/VerticalMenuItems.php'; ?>
                 </div>
                 <div id="adminMiddle">
-                    <div id="welcome">Welcome, <?php echo strtoupper($_SESSION['name']) ?></div>
-                    <div  id="change_password">
-                        <b>Online Thesis Management.</b>
-                    <br/>You have to change your default password before uploading your thesis.
-                    <br/><span style="color: green;font-size: 18px;">Ignore the above message if you have already changed your password.</span>
+                    <div  id="people">
+                    	<a id="std" href="#">Students</a>||<a id="fac" href="#">Faculty</a>
                     </div>
                 </div>
                 <div id="chat">
