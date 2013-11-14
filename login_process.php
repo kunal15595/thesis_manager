@@ -62,7 +62,7 @@
                     $_SESSION['advisor_name'] = $row['advisor_name'];
                 }
             }else if($user_type=="fac") {
-                $sql = "SELECT advisor_name FROM advisor WHERE advisor_id='" . $user_nm . "' and pass='" . $pass . "'";
+                $sql = "SELECT advisor_name FROM advisor WHERE advisor_id='" . $user_nm . "' and `password_hashed`='" . $pass_hashed . "'";
                 $rs = mysql_query($sql);
                 while ($row = mysql_fetch_assoc($rs)) {
                     $result = "FOUND";
@@ -71,7 +71,7 @@
                     $_SESSION['name'] = $row['advisor_name'];
                 }
             }else if($user_type=="adm") {
-                $sql = "SELECT name,role FROM users WHERE user_nm='" . $user_nm . "' and password='" . $pass . "'";
+                $sql = "SELECT name,role FROM users WHERE user_nm='" . $user_nm . "' and `password_hashed`='" . $pass_hashed . "'";
                 $rs = mysql_query($sql);
                 while ($row = mysql_fetch_assoc($rs)) {
                     $result = "FOUND";
