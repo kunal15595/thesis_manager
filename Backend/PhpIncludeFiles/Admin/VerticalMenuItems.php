@@ -22,3 +22,6 @@
 <div id="adminVMenuItem8">
 	<a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/Backend/logout.php'?>">Log Out</a>
 </div>
+<div id="adminVMenuItem9">
+	<a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/people/admin_people.php'?>">People</a>
+</div>
