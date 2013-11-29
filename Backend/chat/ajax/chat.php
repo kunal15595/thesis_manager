@@ -1,7 +1,7 @@
 <?php
-require '../core/init.php';
-require_once '../../config/config.php';
-require_once '../../config/connect.php';
+require '../../core/init.php';
+require_once '../../../config/config.php';
+require_once '../../../config/connect.php';
 if (isset($_POST['method']) === true && empty($_POST['method']) === false ) {
 
 	$chat = new chat();
