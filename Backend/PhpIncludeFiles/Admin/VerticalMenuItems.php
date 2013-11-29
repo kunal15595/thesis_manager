@@ -22,6 +22,16 @@
 <div id="adminVMenuItem8">
 	<a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/Backend/logout.php'?>">Log Out</a>
 </div>
+
 <div id="adminVMenuItem9">
 	<a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/people/admin_people.php'?>">People</a>
+</div>
+<div id="adminVMenuItem10">
+	<a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/Backend/chat/index.php'?>">Messages</a>
+</div>
+<div id="adminVMenuItem11">
+	<a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/Backend/Discussion Forum/Discuss.php'?>">Discussion Forum</a>
+</div>
+<div id="adminVMenuItem12">
+	<a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/Backend/Notice Board/index.php'?>">Notice board</a>
 </div>

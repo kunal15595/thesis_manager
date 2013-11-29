@@ -19,7 +19,9 @@
                 <?php include '../Backend/PhpIncludeFiles/Admin/VerticalMenuItems.php'; ?>
             </div>
             <div id="adminMiddle">
-                
+            <!-- ////////////////////////////////// -->
+            
+            <!-- /////////////////////////////////     -->
             </div>
             <div id="adminFooter">
                 <?php include '../Backend/PhpIncludeFiles/Admin/AdminFooter.php'; ?>

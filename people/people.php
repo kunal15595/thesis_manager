@@ -7,8 +7,9 @@
         <?php require '../config/connect.php'; ?>
         
      <!-- // <script type="text/javascript"></script> -->
+        <link rel="stylesheet" href="css/style.css" type="text/css" /> 
         <link rel="stylesheet" href="<?php echo constant("HOST11") . '/web/css/UserStyleSheet.css' ?>" type="text/css" />
-        <!-- <link rel="stylesheet" href="style.css" type="text/css" /> -->
+        
         <title>Online Thesis Manager</title>
     </head>
     <body>
@@ -50,4 +51,5 @@
         </div>
     </body>
     <script src="../js/jquery.js"></script>
+    <script src="primary.js"></script>
 </html>
