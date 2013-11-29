@@ -71,7 +71,7 @@
                                 </td>
                                 <td style="width: 60%">
                                     <div style="text-align: left">
-                                        <input type="text" name="secure" value="" style="width: 180px"/>
+                                        <input type="text" autocomplete="off" name="secure" value="" style="width: 180px"/>
                                    </div>
                                 </td>
                             </tr>
