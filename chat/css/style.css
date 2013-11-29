@@ -98,7 +98,7 @@ body {
     width: 70%;
     max-height: 15em;
     padding: 0px;
-    border: 1px solid blue;
+    /*border: 1px solid blue;*/
 	list-style-type: none;
 	/*width: 200px;*/
 	/*position: relative;*/
@@ -122,7 +122,7 @@ body {
     text-align: center;
     line-height: 1.5em;
     border: 1px solid #ccc;
-    border: 1px solid magenta;
+    /*border: 1px solid magenta;*/
     
     
 }

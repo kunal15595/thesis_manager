@@ -19,7 +19,7 @@
                 <div id="adminHeaderLocation">Dashboard Home</div>
             </div>
             <div id="adminMiddle">
-                <?php include 'PhpIncludeFiles/faculty_horizontal_menue.php'; ?>
+                <?php include 'PhpIncludeFiles/faculty_vertical_menue.php'; ?>
                 <div style="color: olive;font-size: 20px; text-align: center;width: 100%">****Welcome, <?php echo $_SESSION['faculty_name'] ?>****</div>
                 <div id="bTPanel">
                     <div id="bTPanelTitle">B.Tech students under your guidance</div>

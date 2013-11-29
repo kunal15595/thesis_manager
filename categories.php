@@ -98,7 +98,6 @@
 	    // }
 	    ?>
         
-	    <input class="categories" type='checkbox' name='checkboxvar[]' value='c<?php echo counter; ?>'><?php echo $row["field"]; ?><br>
 	    <?php
 	    // echo $row["field"];
 	   

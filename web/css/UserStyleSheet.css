@@ -36,8 +36,8 @@ html, body{
 }
 #middle{
     width: 100%;
-    height: 60%;
-    overflow: scroll; 
+    height: 80%;
+    overflow-y: scroll; 
 }
 
 #adminHeader{
@@ -63,7 +63,7 @@ html, body{
     /*min-height: 490px;*/
     text-align: center;
     /*border: 3px solid yellow;*/
-    height: 75%;
+    height: 94%;
     border-right: double;
 }
 
@@ -75,7 +75,7 @@ html, body{
     background-color: #ffffff;
     /*min-height: 520px;*/
     /*border: 3px solid brown;*/
-    overflow: scroll;
+    /*overflow-y: scroll;*/
     vertical-align: top;
 }
 
