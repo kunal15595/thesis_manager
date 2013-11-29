@@ -1,12 +1,12 @@
 $(window).load(function() {
 	$('.chat').hide();
 	$('.entry').hide();
-
+	
 });
 
 $(document).ready(function() {
 	var select_value='std';
-
+	
 	$('#view').click(function() {
 		$('.chat').show();
 		$('.entry').hide();

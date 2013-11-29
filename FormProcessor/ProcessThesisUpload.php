@@ -11,12 +11,12 @@ echo "1";
 session_start();
 $pageResultString = "";
 $finalResult = FALSE;
-if (isset($_FILES["fileThesis"])) {
+if (isset($_FILES["fileThesis"]) && isset($_FILES["fileThesisTxt"])) {
     $title = htmlspecialchars(addslashes($_POST['txtTitle']));
     //$advisor = $_POST['comboAdvisor'];
     //$permission = $_POST['chkPermission'];
     $abstract = htmlspecialchars(addslashes($_POST['txtAbstract']));
-    //$thesisFile = $_FILES["fileThesis"];
+    $thesisFile = $_FILES["fileThesis"];
     $isOverWrite = $_POST['chkOverwrite'];
     $time_now = mktime(date('H') + 5, date('i') + 30, date('s'), date('m'), date('d'), date('Y'));
 echo "2";
@@ -58,29 +58,37 @@ echo "3";
         if ($result == "DONE") { //If database operation was successful.
             $file_exist = FALSE;
             $file_renamed = FALSE;
-
+            $fullpath = "../Upload/" . $_SESSION['class'] . "/pdf/" . $newFileName;
             //If file already exists, then rename it to a temp file. The concept of renaming and not deleting is that
-            // the new file may not upload successfully. In that case we will loss both the files.
-            if (file_exists("../Upload/" . $_SESSION['class'] . "/" . $newFileName)) {
+            // the new file may not upload successfully. In that case we will lose both the files.
+            if (file_exists($fullpath)) {
                 $file_exist = TRUE;
                 //unlink("../Upload/" . $_SESSION['class'] . "/" . $newFileName);
-                $file_renamed = rename("../Upload/" . $_SESSION['class'] . "/" . $newFileName, "../Upload/" . $_SESSION['class'] . "/temp_" . $newFileName);
+                $tag = 'temp_';
+                // $old = '../Upload/' . $_SESSION['class'] . '/pdf/' . $newFileName;
+                // $new = '../Upload/' . $_SESSION['class'] . '/pdf/'. $tag . $newFileName;
+                // $file_renamed = rename($old , $new);
+                // $file_renamed = rename("../Upload/" . $_SESSION['class'] . "/pdf/" . $newFileName, "../Upload/" . $_SESSION['class'] . "/pdf/". "_temp" . $newFileName);
+            
+                 $info = pathinfo($fullpath);
+                $newpath = $info['dirname'] . '/' . $tag. $info['filename'].'.'.'pdf';
+                 $file_renamed = rename($fullpath , $newpath);
             }
 
             //If the file was exists but the renaming operation was unsuccessfull.
             if ($file_exist == TRUE && $file_renamed == FALSE) {
-                $pageResultString = '<br/><br/><b>Uploading Failed!!!!!!</b><br/>Unable to rename the previously uploaded file. Please try again.';
+                $pageResultString = $fullpath.$newpath. '<br/><br/><b>Uploading Failed!!!!!!</b><br/>Unable to rename the previously uploaded file. Please try again.';
             } else {
                 //Copy the file to exact location.
-                $res1 = move_uploaded_file($_FILES["fileThesis"]["tmp_name"], "../Upload/" . $_SESSION['class'] . "/" . $newFileName);
+                $res1 = move_uploaded_file($_FILES["fileThesis"]["tmp_name"], "../Upload/" . $_SESSION['class'] . "/pdf/" . $newFileName);
 
                 if ($res1 == FALSE) {
                     $pageResultString = '<br/><br/><b>Uploading Failed!!!!!!</b><br/>Unable to store your file in ../Upload/'.$_SESSION['class'].'/'.$newFileName.'Please try again.';
                 } else {
-                    unlink("../Upload/" . $_SESSION['class'] . "/temp_" . $newFileName);
+                    unlink("../Upload/" . $_SESSION['class'] . "/pdf/temp_" . $newFileName);
                     $log_file_name = $_SESSION["roll_number"] . '-' . date("dMY-G-i-u") . '.pdf';
-                    copy("../Upload/" . $_SESSION['class'] . "/" . $newFileName, "../Upload/LOG/" . $_SESSION['class'] . "/" . $log_file_name);
-                    $pageResultString = '<br/><br/><b>Uploading Successfull.</b> Error'.codeToMessage($_FILES["fileThesis"]["error"]).'
+                    copy("../Upload/" . $_SESSION['class'] . "/" . $newFileName, "../Upload/LOG/" . $_SESSION['class'] . "/pdf/" . $log_file_name);
+                    $pageResultString = '<br/><b>Uploading Successfull.</b> 
                                      <br/><br/>Verify the followings by clicking <a href="status.php">here</a>:
                                      <ul>
                                      <li>Make sure that the informations you have entered are all correct.</li>

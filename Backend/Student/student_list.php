@@ -15,10 +15,18 @@
         } else {
             $roll = "MT";
         }
-        $result = getAllStudents($roll);
+        if (isset($_POST['radioClass2'])) {
+            $searchBy = $_POST['radioClass2'];
+        } else {
+            $searchBy = "Name";
+        }
+        $result = getAllStudents($roll,$searchBy);
         ?>
         <script language="javascript">
             function searchSelector(){
+                document.forms["classSelecter"].submit();
+            }
+            function findSelector(){
                 document.forms["classSelecter"].submit();
             }
         </script>
@@ -42,9 +50,9 @@
                                 <tr><td colspan="3" style="height: 10px"></td></tr>
                                 <tr class="formTableRow">
                                     <td class="formTableColLabel">Select Class:</td>
-                                    <td class="formTableColField">B.Tech<input type="radio" name="radioClass"  value="BT" onclick="searchSelector()" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M.Tech<input type="radio" name="radioClass" value="MT" onclick="searchSelector()" /></td>
+                                    <td class="formTableColField">B.Tech<input type="radio" name="radioClass" value="BT" onclick="searchSelector()" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M.Tech<input type="radio" name="radioClass" value="MT" onclick="searchSelector()" /></td>
                                     <td class="formTableColHelp"></td>
-                                </tr>
+                                </tr> 
                                 <tr><td colspan="3" style="height: 10px"></td></tr>
                             </table>
                         </form>

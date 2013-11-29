@@ -13,27 +13,29 @@
 
 html, body{ 
     margin:0; 
-    padding:10px; 
+    height: 100%;
+    /*padding:10px; */
     text-align:center; 
     /*    background-color: #ffffff;*/
 }
 
 #bodyPanel{
-    width:940px; 
+    width:100%; 
+    height: 100%;
     text-align:left; 
     margin:0 auto; 
-    border-style:solid;
-    border-width:2px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px; 
+    /*border-style:solid;*/
+    /*border-width:2px;*/
+    /*-webkit-border-radius: 5px;*/
+    /*-moz-border-radius: 5px;*/
+    /*border-radius: 5px; */
     background-color: #ffffff;
 /*    float: left;*/
 }
 
 #adminHeader{
     width: inherit;
-    height: 100px;
+    height: 15%;
     background-color: #006600;
     text-align: center;
     
@@ -45,19 +47,20 @@ html, body{
 
 #adminVMenu{
     float: left;
-    width: 200px;
+    width: 20%;
     padding-top: 30px;
     background-color: #ffffff;
-    min-height: 570px;
+    /*min-height: 570px;*/
     text-align: center;
     
 }
 
 #adminMiddle{
     padding-left: 210px;
-    width: 730px;
+    width: 60%;
+    height: 80%;
     background-color: #ffffff;
-    min-height: 600px;
+    /*min-height: 600px;*/
 /*    float: left;*/
 }
 
@@ -73,7 +76,7 @@ html, body{
     width: inherit;
     color: darkgreen;
     font-family: cursive;
-    padding-top: 10px;
+    padding-top: 20px;
     border-bottom-style: double;
     border-bottom-width: 4px;
     border-bottom-color: #990033;
@@ -154,10 +157,12 @@ html, body{
     font-family: cursive;
     text-decoration: none;
     font-size: 18px;
+    
 }
 
 a{
     text-decoration: none;
+    padding-top: 100px;
 }
 
 

@@ -4,6 +4,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <?php include 'config/config.php'; ?>
+        <?php include 'config/connect.php'; ?>
         <?php include 'Macros/DatabaseFunctions.php'; ?>
         <?php include 'Macros/CommonFunctions.php'; ?>
         <?php require_once 'session_check.php'; ?>
@@ -25,7 +26,9 @@
             //$pageResult = "DONE";
         }
         ?>
+        <link rel="stylesheet" href="css/categories.css" type="text/css" />
         <link rel="stylesheet" href="<?php echo constant("HOST11") . '/web/css/UserStyleSheet.css' ?>" type="text/css" />
+
         <title>Online Thesis Manager</title>
          <script type="text/javascript" src="functions.js"></script>
     </head>
@@ -151,6 +154,14 @@
                                              <input type="file" name="fileThesisTxt" value="" />
     <!--                                            <input type="hidden" name="MAX_FILE_SIZE" value="5000000"/>-->
                                             <span style="color: green;padding-left: 20px">(Upload only in TXT format.)</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 20%"><div style="text-align: left;color: blue;font-weight: bold">Choose relevant categories(at least one): </div></td>
+                                    <td style="width: 30%">
+                                        <div style="text-align: left">
+                                        
                                         </div>
                                     </td>
                                 </tr>

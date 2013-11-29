@@ -138,7 +138,7 @@ function getAllStudents($class) {
                             <td style="width: 80px; text-align: center;color: #990000">Roll</td>
                             <td style="width: 50px; text-align: center;color: #990000">Class</td>
                             <td style="width: 200px;text-align: center;color: #990000">User Name</td>
-                            <td style="width: 150px;text-align: center;color: #990000">Password</td>
+                            
                         </tr>';
     while ($row = mysql_fetch_assoc($result)) {
         $flag = TRUE;
@@ -155,7 +155,7 @@ function getAllStudents($class) {
         $inerhtml = $inerhtml . '<td style="width: 80px" align="center"><a href="' . constant("HOST11") . '/Backend/Student/student_edit.php?roll=' . $row[roll_number] . '">' . $row[roll_number] . '</a></td>';
         $inerhtml = $inerhtml . '<td style="width: 50px" align="center">' . $fullClass . '</td>';
         $inerhtml = $inerhtml . '<td style="width: 200px" align="center">' . $row["user_nm"] . '</td>';
-        $inerhtml = $inerhtml . '<td style="width: 150px" align="center">' . $row["password"] . '</td>';
+        
         $inerhtml = $inerhtml . '</tr>';
         $inerhtml = $inerhtml . '<tr><td colspan="6" style="height:2px;background-color: gray"></td></tr>';
     }
