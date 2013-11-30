@@ -147,13 +147,13 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="width: 20%"><div style="text-align: left;color: blue;font-weight: bold">Upload Thesis (TXT): </div></td>
+                                    <td style="width: 20%"><div style="text-align: left;color: blue;font-weight: bold">Upload Thesis (TXT/DOC): </div></td>
                                     <td style="width: 30%">
                                         <div style="text-align: left">
                                             
                                              <input type="file" name="fileThesisTxt" value="" />
     <!--                                            <input type="hidden" name="MAX_FILE_SIZE" value="5000000"/>-->
-                                            <span style="color: green;padding-left: 20px">(Upload only in TXT format.)</span>
+                                            <span style="color: green;padding-left: 20px">(Upload only in TXT/DOC format.)</span>
                                         </div>
                                     </td>
                                 </tr>
@@ -196,5 +196,7 @@
                 <?php include 'Macros/AdminFooter.php'; ?>
             </div>
         </div>
+        <script src="js/jquery.js"></script>
+        <script src="categories.js"></script>
     </body>
 </html>

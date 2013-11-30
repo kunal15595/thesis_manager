@@ -24,13 +24,13 @@
 		<tr>
 		    <div id="autosuggest">
 		    	<td>
-					<input type="text" class="autosuggest" placeholder="Select..."/>
+					<input id="cat1" type="text" class="autosuggest" placeholder="Select..."/>
 				</td>
 				<td>	
-					<input type="text" class="autosuggest" placeholder="Select..."/>
+					<input id="cat2" type="text" class="autosuggest" placeholder="Select..."/>
 				</td>
 				<td>
-					<input type="text" class="autosuggest" placeholder="Select..."/>
+					<input id="cat3" type="text" class="autosuggest" placeholder="Select..."/>
 		    	</td>
 		    </div>
     	</tr>
@@ -39,9 +39,11 @@
 	
 	<td>
 		<div class="dropdownl">
-			<ul class="result">
+			<ul class="result1">
 				<?php
+				$sql = "SELECT DISTINCT field from categories ";
 				$query_run=mysql_query($sql);
+				// echo mysql_num_rows($query_run);
 					while ($query_row=mysql_fetch_assoc($query_run)) {
 						# code...
 						$field=strtolower($query_row['field']);
@@ -55,7 +57,7 @@
 	</td>
 	<td>
 		<div class="dropdownm">
-			<ul class="result">
+			<ul class="result2">
 				<?php
 				$query_run=mysql_query($sql);
 					while ($query_row=mysql_fetch_assoc($query_run)) {
@@ -71,7 +73,7 @@
 	</td>
 	<td>
 		<div class="dropdownr">
-			<ul class="result">
+			<ul class="result3">
 				<?php
 				$query_run=mysql_query($sql);
 					while ($query_row=mysql_fetch_assoc($query_run)) {
