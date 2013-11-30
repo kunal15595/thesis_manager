@@ -9,8 +9,8 @@
         <title>Thesis Manager (Admin Section)</title>
         <?php
         //Forward to login page if not authenticated.
-        session_start();
-        include '../../check_session.php';
+        //session_start();
+        // include '../check_session.php';
         
         
         $roll = "MT";

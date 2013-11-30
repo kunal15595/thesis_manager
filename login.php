@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <?php include 'config/config.php'; ?>
-        <link rel="stylesheet" href="<?php echo constant("HOST11") . '/web/css/UserStyleSheet.css' ?>" type="text/css" />
+        <link rel="stylesheet" href="<?php echo constant("HOST11") . '/web/css/login.css' ?>" type="text/css" />
         <title>Online Thesis Manager</title>
     </head>
     <body>
@@ -12,9 +12,9 @@
                 <div id="adminHeaderTitle"><?php include 'Macros/headerImage.php';?></div>
                 <div id="adminHeaderLocation">Department of CSE, IIT Guwahati</div>
             </div>
-            <div id="adminVMenu"></div>
+            <!-- <div id="adminVMenu"></div> -->
             <div id="adminMiddle">
-                <div id="adminMiddleContent" >
+                <!-- <div id="adminMiddleContent" > -->
                     <form action="login_process.php" method="POST">
 
                         <table id="login_table" >
@@ -29,7 +29,7 @@
                                 <td style="width: 40%">
                                     <div id="select_user_type">Select User Type :</div>
                                 </td>
-                                <td style="width: 60%">
+                                <td style="width: 60%" align="left">
                                     <div id="select_user">
                                         <select name="user_type">
                                             <option value="std">Student</option>
@@ -77,8 +77,8 @@
                             </tr>
                             <br/><br/>
                             <tr>
-                                <td colspan="2" style="width: 100%">
-                                    <div style="color: black;text-align: right;padding-right: 50px">
+                                <td colspan="2" style="width: 100%" align="center">
+                                    <div style="color: black;">
                                         <input type="submit" value="Log In" name="buttonSubmit" />
                                     </div>
                                 </td>
@@ -93,7 +93,7 @@
                         </table>
                     </form>
                     <div id="ForgotPassword"><a href="Forgot_password/ForgotPassword.php">Forgot Password</a></div>
-                </div>
+                <!-- </div> -->
             </div>
             <div id="adminFooter">
                 <?php include 'Macros/AdminFooter.php'; ?>

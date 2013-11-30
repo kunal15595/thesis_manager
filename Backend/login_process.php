@@ -1,4 +1,4 @@
-hg
+
 <?php
 require_once '../config/config.php';
 require_once '../config/pattern.php';
@@ -31,7 +31,6 @@ require_once '../config/pattern.php';
 
     
     ?>
-    gh
     <!-- // <script type="text/javascript" src="alert.js"></script> -->
 
     <?php
