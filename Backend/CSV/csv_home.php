@@ -6,11 +6,8 @@
         <?php include '../PhpIncludeFiles/CommonFunctions.php'; ?>
         <link rel="stylesheet" href="<?php echo constant("HOST11") . '/web/css/AdminStyleSheet.css' ?>" type="text/css" />
         <title>Thesis Manager (Admin Section)</title>
-        <?php
-        //Forward to login page if not authenticated.
-        session_start();
-        include '../check_session.php'; ?>
-        ?>
+        <?php include '../check_session.php'; ?>
+    
     </head>
     <body>
         <div id="bodyPanel">
