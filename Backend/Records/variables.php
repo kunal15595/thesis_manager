@@ -1,4 +1,5 @@
 <?php
+require_once '../PhpIncludeFiles/Database/AdminRecordManager.php';
 $roll = "MT";
         $pageCounter = 1;
         if (isset($_GET['class'])) {
@@ -11,8 +12,10 @@ $roll = "MT";
             $pageCounter = $_GET['pageCount'];
         }
         if ($roll != "NONE") {
-            $result = getAllRecords($roll, $pageCounter);
+            $result = getAllRecords( $roll, $pageCounter );
         } else {
             $result = "NONE";
         }
+echo 'hello';
+
 ?>
