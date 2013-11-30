@@ -121,7 +121,7 @@ body {
 	
     text-align: center;
     line-height: 1.5em;
-    border: 1px solid #ccc;
+    /*border: 1px solid #ccc;*/
     /*border: 1px solid magenta;*/
     
     
@@ -134,7 +134,7 @@ body {
 	margin-top: 100px;
 	padding: 20px;
 	float: left;
-	border: 1px solid green;
+	/*border: 1px solid green;*/
 }
 
 .result li:hover {
@@ -154,7 +154,7 @@ body {
 	position: relative;
 	background-color: #444;
 	border-radius: 7px;
-	border: 3px solid #ab3;
+	/*border: 3px solid #ab3;*/
 	/*width: 360px;*/
 	width: 30%;
 	/*height: 645px;*/
