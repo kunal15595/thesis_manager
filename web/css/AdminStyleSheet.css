@@ -56,8 +56,8 @@ html, body{
 }
 
 #adminMiddle{
-    padding-left: 210px;
-    width: 60%;
+    padding-left: 310px;
+    width: 50%;
     height: 80%;
     background-color: #ffffff;
     /*min-height: 600px;*/
@@ -112,7 +112,7 @@ html, body{
 }
 
 #dashboard{
-    padding-top: 100px;
+    /*padding-top: 100px;*/
 }
 
 .myHeaderMenuStrip{

@@ -6,7 +6,7 @@
         <?php require '../PhpIncludeFiles/Database/AdminRecordManager.php'; ?>
         <?php
         //Forward to login page if not authenticated.
-        session_start();
+        // session_start();
         include '../../check_session.php';
         ?>
         <link rel="stylesheet" href="<?php echo constant("HOST11") . '/web/css/AdminStyleSheet.css' ?>" type="text/css" />
