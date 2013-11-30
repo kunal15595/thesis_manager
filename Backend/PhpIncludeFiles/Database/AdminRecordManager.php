@@ -11,7 +11,7 @@ function getAllRecords($class, $page) {
     if ($result != "DONE") {
         return "DBCONNECTION_ERROR";
     }
-    require_once '../../../config/connect.php';
+    // require_once '../../../config/connect.php';
     $sql = "SELECT roll_number,name,P.user_nm as user_nm,thesis_title,advisor_name,abstract,P.submitted_at as submitted_at
             FROM student as S,advisor as A,projects as P where S.user_nm=P.user_nm and S.advisor_id=A.advisor_id and S.class='" . $class . "'
             ORDER BY roll_number";
@@ -48,6 +48,7 @@ function getAllRecords($class, $page) {
 
 
     while ($row = mysql_fetch_assoc($rs)) {
+                      <tr>
         $counter++;
         if ($counter < $startIndex) {
             continue;
@@ -67,7 +68,6 @@ function getAllRecords($class, $page) {
         }
         $inerhtml.='<tr><td>
                    <table>
-                      <tr>
                          <td><div style="text-align: center;color: #006600;font-family: Verdana,Arial,Helvetica,sans-serif;font-size: 18px;">' . stripslashes($row["thesis_title"]) . '</div><td>
                       </tr>
                       <tr>

@@ -6,9 +6,9 @@
         <?php include '../PhpIncludeFiles/Database/AdminRecordManager.php'; ?>
         <?php include '../PhpIncludeFiles/CommonFunctions.php'; ?>
         <?php include '../check_session.php';?>
-        <link rel="stylesheet" href="<?php echo constant("HOST11") . '/web/css/AdminStyleSheet.css' ?>" type="text/css" />
-        <?php include 'variables.php';?>
         <title>Thesis Manager (Admin Section)</title>
+        <link rel="stylesheet" href="<?php echo constant("HOST11") . '/web/css/AdminStyleSheet.css' ?>" type="text/css" />
+        
     </head>
     <body>
         <div id="bodyPanel">
