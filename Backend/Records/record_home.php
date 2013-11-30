@@ -5,31 +5,10 @@
         <?php include '../../config/config.php'; ?>
         <?php include '../PhpIncludeFiles/Database/AdminRecordManager.php'; ?>
         <?php include '../PhpIncludeFiles/CommonFunctions.php'; ?>
+        <?php include '../check_session.php';?>
         <link rel="stylesheet" href="<?php echo constant("HOST11") . '/web/css/AdminStyleSheet.css' ?>" type="text/css" />
+        <?php include 'variables.php';?>
         <title>Thesis Manager (Admin Section)</title>
-        <?php
-        //Forward to login page if not authenticated.
-        //session_start();
-        // include '../check_session.php';
-        
-        
-        $roll = "MT";
-        $pageCounter = 1;
-        if (isset($_GET['class'])) {
-            $roll = $_GET['class'];
-            if ($roll != "MT" && $roll != "BT") {
-                $roll = "NONE";
-            }
-        }
-        if (isset($_GET['pageCount'])) {
-            $pageCounter = $_GET['pageCount'];
-        }
-        if ($roll != "NONE") {
-            $result = getAllRecords($roll, $pageCounter);
-        } else {
-            $result = "NONE";
-        }
-        ?>
     </head>
     <body>
         <div id="bodyPanel">
