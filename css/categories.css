@@ -174,12 +174,12 @@ body {
 #adminMiddle{
 	position: relative;
 	width: 56%;
-	
+	overflow-y: scroll;
 	display: inline-block;
 }
 #middle{
 	width: 100%;
-	height: 70%;
+	height: 50%;
 }
 /*
 #whole{

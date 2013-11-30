@@ -25,8 +25,32 @@
                     <div id="welcome">Welcome, <?php echo strtoupper($_SESSION['name']) ?></div>
                     <div  id="change_password">
                         <b>Online Thesis Management.</b>
-                    <br/>You have to change your default password before uploading your thesis.
-                    <br/><span style="color: green;font-size: 18px;">Ignore the above message if you have already changed your password.</span>
+                    </br>
+                    <?php 
+                        include 'config/connect.php';
+                        $sql = "SELECT pass_changed, class FROM student WHERE user_nm LIKE '".$_SESSION['user_nm']."'";
+                        $query_run = mysql_query($sql);
+                        if (mysql_num_rows($query_run)==1) {
+                            while($query_row=mysql_fetch_assoc($query_run))
+                            {
+                                $status=$query_row['pass_changed'];
+                                $class = $query_row['class'];
+                                // echo $status;
+                            }
+                        }
+                        if ($status!="YES" && $status!="yes") {
+                           echo "You have to change your default password before uploading your thesis";
+                        }
+                        $sql = "SELECT last_date FROM schedule WHERE class LIKE '".$class."'";
+                        $query_run = mysql_query($sql);
+                        if (mysql_num_rows($query_run)==1) {
+                            while($query_row=mysql_fetch_assoc($query_run))
+                            {
+                                $date=$query_row['last_date'];
+                                
+                            }
+                        }
+                    ?>
                     </div>
                 </div>
                 <div id="chat">
