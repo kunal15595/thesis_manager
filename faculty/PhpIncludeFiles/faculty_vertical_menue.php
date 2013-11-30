@@ -9,20 +9,23 @@
 	<a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/faculty/logout.php'?>">Log Out</a>
 </div>
 <div id="adminVMenuItem4" class="links">
-	<a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/Backend/Records/upload_history.php'?>">Notice Board</a>
+	<a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/faculty/Notice Board/index.php'?>">Notice Board</a>
 </div>
 <div id="adminVMenuItem5" class="links">
-	<a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/Backend/Schedule/schedule_list.php'?>">Messages</a>
+	<a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/faculty/chat/index.php'?>">Messages</a>
 </div>
 <div id="adminVMenuItem6" class="links">
-	<a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/Backend/permission_mt.php'?>">Discussion Forum</a>
+	<a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/faculty/Discussion Forum/Discuss.php'?>">Discussion Forum</a>
 </div>
 <div id="adminVMenuItem7" class="links">
-	<a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/Backend/permission_bt.php'?>">B.Tech Permissions</a>
+	<a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/faculty/permission_bt.php'?>">B.Tech Permissions</a>
 </div>
 <div id="adminVMenuItem8" class="links">
-	<a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/Backend/logout.php'?>">Log Out</a>
+	<a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/logout.php'?>">Log Out</a>
 </div>
 <div id="adminVMenuItem9" class="links">
 	<a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/people/admin_people.php'?>">People</a>
+</div>
+<div id="adminVMenuItem10" class="links">
+	<a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/event-calender/index.php'?>">Calender</a>
 </div>

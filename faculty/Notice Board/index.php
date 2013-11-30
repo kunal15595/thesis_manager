@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-//require 'core/init.php';
+require 'core/init.php';
 
 $_SESSION['user'] = (isset($_GET['user']) === true) ? (int)$_GET['user'] : 0;
 
