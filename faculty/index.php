@@ -20,52 +20,46 @@
                 <div id="adminHeaderLocation">Dashboard Home</div>
             </div>
             <div id="adminMiddle">
-            <table>
-              <td id="adminVMenu" style="width: 15%;">
-                <div >
-                <?php include 'PhpIncludeFiles/faculty_vertical_menue.php'; ?>
+            
+                <div id="adminVMenu">
+                  <?php include 'PhpIncludeFiles/faculty_vertical_menue.php'; ?>
                 </div>
-              </td>
-              <td style="width: 85%;">  
-                <table> 
-                  <tr> 
-                     <div style="color: olive;font-size: 20px; text-align: center;width: 100%">****Welcome, <?php echo $_SESSION['name'] ?>****</div>
-                  </tr>        
-                  <tr >
-                    <div id="bTPanel" >
-                        <div id="bTPanelTitle">B.Tech students under your guidance</div>
-                        <div id="bTPanelInfo">Click on the roll number for complete list of permission granting history</div>
-                        <div id="bTListHeader">
-                          
-                            <div id="bTSrlNo">S No.</div>
-                            <div id="bTRollNo">Roll Number</div>
-                            <div id="bTName">Name</div>
-                            <div id="bTThesisLink">Thesis Link</div>
-                            <div id="bTPermission">Permission</div>
-                            <div id="bTStatus">Status</div>
-                          
-                        </div>
-                        <div> 
-                  
+              <div id="Middle">
+                <div id="Name">****Welcome, <?php echo $_SESSION['name'] ?>****</div>
+                
+                <div id="bTPanel" >
+                    <div id="bTPanelTitle">B.Tech students under your guidance</div>
+                    <div id="bTPanelInfo">Click on the roll number for complete list of permission granting history</div>
+                    <div id="bTListHeader">
+                      
+                        <div id="bTSrlNo">S No.</div>
+                        <div id="bTRollNo">Roll Number</div>
+                        <div id="bTName">Name</div>
+                        <div id="bTThesisLink">Thesis Link</div>
+                        <div id="bTPermission">Permission</div>
+                        <div id="bTStatus">Status</div>
+                      
+                    </div>
+                    <div> 
+              
 
-                          <?php 
-                             $result=getAllStudents("BT",$_SESSION['user_nm']);
-                             echo $result;
-                             if($result=="DONE"){
-                                 echo $_SESSION["innerHTMLSimple"];
-                                 unset ($_SESSION["innerHTMLSimple"]);
-                             }else if($result=="DBCONNECTION_ERROR"){
-                                 echo '<div id="ListOddRow" style="text-align: center; color: #990033">Database connection error.</div>';
-                             }else if($result=="NOT_FOUND"){
-                                 echo '<div id="ListOddRow" style="text-align: center; color: #990033">No B.Tech student found under your guidance.</div>';
-                             }else{
-                                 echo '<div id="ListOddRow" style="text-align: center; color: #990033">Some unknown error occured. Please refresh the page.</div>';
-                             }
-                          ?>
-                        </div>
-                  </div>
-                </tr>
-                <tr>  
+                      <?php 
+                         $result=getAllStudents("BT",$_SESSION['user_nm']);
+                         echo $result;
+                         if($result=="DONE"){
+                             echo $_SESSION["innerHTMLSimple"];
+                             unset ($_SESSION["innerHTMLSimple"]);
+                         }else if($result=="DBCONNECTION_ERROR"){
+                             echo '<div id="ListOddRow" style="text-align: center; color: #990033">Database connection error.</div>';
+                         }else if($result=="NOT_FOUND"){
+                             echo '<div id="ListOddRow" style="text-align: center; color: #990033">No B.Tech student found under your guidance.</div>';
+                         }else{
+                             echo '<div id="ListOddRow" style="text-align: center; color: #990033">Some unknown error occured. Please refresh the page.</div>';
+                         }
+                      ?>
+                    </div>
+                </div>
+       
                   <div id="mTPanel">
                       <div id="mTPanelTitle">M.Tech students under your guidance</div>
                       <div id="bTPanelInfo">Click on the roll number for complete list of permission granting history</div>
@@ -93,12 +87,10 @@
                      }
                   ?>
                   </div>
-                </tr>
+              </div>
 
             </div>
-                </table>
-              </td>
-            </table>            <div id="adminFooter">
+              <div id="adminFooter">
                 <?php include 'PhpIncludeFiles/AdminFooter.php'; ?>
             </div>
         </div>

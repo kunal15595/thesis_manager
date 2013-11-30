@@ -79,15 +79,33 @@ html, body{
 
 #adminVMenu{
     /*display: inline-block;*/
-    position: relative;
+    /*position: relative;*/
     /*width: 200px;*/
-    width: 50%;
+    float: left;
+
+    width: 16%;
     padding-top: 30px;
     background-color: #ffffff;
     /*min-height: 490px;*/
     text-align: center;
     /*border: 3px solid yellow;*/
     height: 100%;
+    
+    border:2px solid magenta;
+    border-right: double;
+}
+#Middle{
+    /*display: inline-block;*/
+    /*position: relative;*/
+    /*width: 200px;*/
+    float: right;
+    width: 80%;
+    padding-top: 10px;
+    background-color: #ffffff;
+    /*min-height: 490px;*/
+    text-align: center;
+    /*border: 3px solid yellow;*/
+    /*height: 100%;*/
     
     border:2px solid magenta;
     border-right: double;
@@ -181,7 +199,7 @@ a{
 For Index page
 */
 #bTPanel{
-    padding-top: 30px;
+    padding: 30px;
     /*width: 940px;*/
     width: 90%;
     /*height: 90%;*/
@@ -189,7 +207,7 @@ For Index page
     border: 5px solid black;
 }
 #bTPanelTitle{
-    width: inherit;
+    width: 100%;
     /*height: 30px;*/
     text-align: center;
     color: #006600;
@@ -199,7 +217,7 @@ For Index page
     font-weight: bold;
 }
 #bTPanelInfo{
-    width: inherit;
+    width: 100%;
     /*height: 20px;*/
     text-align: center;
     color: blue;
@@ -210,7 +228,7 @@ For Index page
 }
 #bTListHeader{
     /*width: 940px;*/
-    width: 70%;
+    width: 100%;
     background-color: #cccccc;
     float: left;
     /*height: 25px;*/
@@ -223,42 +241,42 @@ For Index page
 }
 #bTSrlNo{
     width: 50px;
-    height: inherit;
+    height: 100%;
     color: inherit;
     float: left;
     text-align: center;
 }
 #bTRollNo{
     width: 100px;
-    height: inherit;
+    /*height: inherit;*/
     float: left;
     color: inherit;
     text-align: center;
 }
 #bTName{
     width: 250px;
-    height: inherit;
+    /*height: inherit;*/
     color: inherit;
     float: left;
     text-align: center;
 }
 #bTThesisLink{
     width: 100px;
-    height: inherit;
+    /*height: inherit;*/
     color: inherit;
     float: left;
     text-align: center;
 }
 #bTPermission{
     width: 200px;
-    height: inherit;
+    /*height: inherit;*/
     color: inherit;
     float: left;
     text-align: center;
 }
 #bTStatus{
     width: 200px;
-    height: inherit;
+    /*height: inherit;*/
     color: inherit;
     float: left;
     text-align: center;
@@ -267,7 +285,7 @@ For Index page
 
 
 #mTPanel{
-    padding-top: 30px;
+    padding: 30px;
     /*width: 940px;*/
     width: 80%;
     /*float: left;*/
@@ -284,7 +302,8 @@ For Index page
     font-weight: bold;
 }
 #mTListHeader{
-    width: 940px;
+    /*width: 940px;*/
+    width: 100%;
     background-color: #cccccc;
     float: left;
     height: 25px;
