@@ -22,7 +22,7 @@ $chat = new chat();
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<?php include '../../config/config.php'; ?>
-        <?php include '../check_session.php'; ?>
+        <?php include '../../session_check.php'; ?>
 		<link rel="stylesheet" href="<?php echo constant("HOST11") . '/web/css/UserStyleSheet.css' ?>" type="text/css" />
 		<link rel="stylesheet" href="css/style.css"/>
 		<title>AJAX CHAT</title>
