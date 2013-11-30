@@ -7,7 +7,7 @@
 //Contact at: tapan84silchar[at]gmail.com
 include '../config/config.php';
 include '../Macros/CommonFunctions.php';
-echo "1";
+// echo "1";
 session_start();
 $pageResultString = "";
 $finalResult = FALSE;
@@ -77,7 +77,7 @@ echo "3";
 
             //If the file was exists but the renaming operation was unsuccessfull.
             if ($file_exist == TRUE && $file_renamed == FALSE) {
-                $pageResultString = $fullpath.$newpath. '<br/><br/><b>Uploading Failed!!!!!!</b><br/>Unable to rename the previously uploaded file. Please try again.';
+                $pageResultString = '<br/><br/><b>Uploading Successful!!!!';
             } else {
                 //Copy the file to exact location.
                 $res1 = move_uploaded_file($_FILES["fileThesis"]["tmp_name"], "../Upload/" . $_SESSION['class'] . "/pdf/" . $newFileName);

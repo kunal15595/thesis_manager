@@ -11,6 +11,7 @@ body {
 .dropdownr, .dropdownl, .dropdownm{
 	/*position: relative;*/
 	width: 90%;
+	/*min-height: 15em;*/
 }
 .messages {
 	border: 1px solid black;
@@ -86,7 +87,7 @@ body {
 	padding-bottom: 0px;
 }
 
-.result{
+.result1, .result2, .result3{
 	list-style-type: none;
 	
 	/*width: 200px;*/
@@ -102,13 +103,13 @@ body {
     /*width: 30%;*/
     max-height: 15em;
     padding: 0px;
-    border: 1px solid blue;
+    /*border: 1px solid blue;*/
 	list-style-type: none;
 	/*width: 200px;*/
 	/*position: relative;*/
 }
 
-.result li {
+.result1 li, .result2 li, .result3 li {
 	/*width: 180px;*/
 	width: 100%;
 	position: relative;
@@ -125,8 +126,8 @@ body {
 	
     text-align: center;
     line-height: 1.5em;
-    border: 1px solid #ccc;
-    border: 1px solid magenta;
+    /*border: 1px solid #ccc;*/
+    /*border: 1px solid magenta;*/
     
     
 }
@@ -141,7 +142,8 @@ body {
 	border: 1px solid green;
 }
 
-.result li:hover {
+
+.result1 li:hover, .result2 li:hover, .result3 li:hover {
 	background: #555;
 	color: #fff;
 }
