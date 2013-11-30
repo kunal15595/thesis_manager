@@ -5,7 +5,7 @@
         <?php include '../../config/config.php'; ?>
         <?php include '../PhpIncludeFiles/Database/AdminRecordManager.php'; ?>
         <?php include '../PhpIncludeFiles/CommonFunctions.php'; ?>
-        <?php include '../check_session.php';?>
+        <?php include '../../session_check.php';?>
         <title>Thesis Manager (Admin Section)</title>
         <link rel="stylesheet" href="<?php echo constant("HOST11") . '/web/css/AdminStyleSheet.css' ?>" type="text/css" />
         

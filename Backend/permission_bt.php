@@ -6,7 +6,7 @@
         include '../config/config.php';
         include 'PhpIncludeFiles/Database/admin_permission_manager.php';
         session_start();
-        if (!isset($_SESSION['admin_user_nm'])) {
+        if (!isset($_SESSION['user_nm'])) {
             header("Location: " . constant("HOST11") . "/Backend/login.php");
         }
         ?>

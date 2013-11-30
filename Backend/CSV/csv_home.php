@@ -20,7 +20,7 @@
             </div>
             <div id="adminMiddle">
                 <?php include '../PhpIncludeFiles/Admin/CSV/CSVHorizontalMenu.php'; ?>
-                <div id="adminMiddleContent">
+                <!-- <div id="adminMiddleContent"> -->
                     <table style="width: 100%">
                         <tr>
                             <td colspan="2"><div style="color: #006600;font-size: 20px;text-align: center">Download different types of CSV format files.</div></td>
@@ -62,7 +62,7 @@
                         </tr>
                         <tr><td colspan="2" style="background-color: #0a030a;height: 3px;width: 100%"></td></tr>
                     </table>
-                </div>
+                <!-- </div> -->
             </div>
             <div id="adminFooter">
                 <?php include '../PhpIncludeFiles/Admin/AdminFooter.php'; ?>
