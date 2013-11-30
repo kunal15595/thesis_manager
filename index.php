@@ -46,13 +46,35 @@
                         if (mysql_num_rows($query_run)==1) {
                             while($query_row=mysql_fetch_assoc($query_run))
                             {
-                                $date=$query_row['last_date'];
+                                $date1=$query_row['last_date'];
                                 
+                                list($year, $month, $date) = explode("-", $date);
+                                $date2=date("Y-m-d");
+
+                                $diff = abs(strtotime($date2) - strtotime($date1));
+
+                                $years = floor($diff / (365*60*60*24));
+                                $months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
+                                $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
+                                $time_left = "Time left for thesis submission : ";
+                                if ($years>0) {
+                                    $time_left = $time_left." ".$years." years, ";
+                                }
+                                if ($months>0) {
+                                    $time_left = $time_left." ".$months." months, ";
+                                }
+                                if ($days>0) {
+                                    $time_left = $time_left." ".$days." days ";
+                                }
+                                $time_left = $time_left." left";
                             }
                         }
                     ?>
                     </div>
+                <div>
+                    <?php echo $time_left; ?>
                 </div>
+            </div>
                 <div id="chat">
                 <?php
                 session_start();

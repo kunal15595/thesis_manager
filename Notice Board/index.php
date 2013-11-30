@@ -46,8 +46,6 @@ $chat = new chat();
 			        <div id="welcome">Welcome, <?php echo strtoupper($_SESSION['name']) ?></div>
 			        <div  id="change_password">
 			            <b>Welcome to Online Thesis Management.</b>
-			        <br/>You have to change your default password before uploading your thesis.
-			        <br/><span style="color: green;font-size: 18px;">Ignore the above message if you have already changed your password.</span>
 			        </div>
 			    </div>
 			    

@@ -19,8 +19,18 @@
                 <div id="adminHeaderLocation">Dashboard Home</div>
             </div>
             <div id="adminMiddle">
+            <table>
+              <td>
+                <div id="adminVMenu">
                 <?php include 'PhpIncludeFiles/faculty_vertical_menue.php'; ?>
-                <div style="color: olive;font-size: 20px; text-align: center;width: 100%">****Welcome, <?php echo $_SESSION['faculty_name'] ?>****</div>
+                </div>
+              </td>
+              <td>  
+                <table> 
+                <tr> 
+                <div style="color: olive;font-size: 20px; text-align: center;width: 100%">****Welcome, <?php echo $_SESSION['name'] ?>****</div>
+                    </tr>        
+              <tr>
                 <div id="bTPanel">
                     <div id="bTPanelTitle">B.Tech students under your guidance</div>
                     <div id="bTPanelInfo">Click on the roll number for complete list of permission granting history</div>
@@ -33,7 +43,10 @@
                         <div id="bTStatus">Status</div>
                     </div>
                 </div>
-                
+              </tr>
+              </table>
+              </td>
+            </table>
                 <?php 
                    $result=getAllStudents("BT",$_SESSION["faculty_user_nm"]);
                    if($result=="DONE"){

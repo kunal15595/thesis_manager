@@ -51,6 +51,8 @@ html, body{
     width: 70%;
     background-color: #ffffff;
     /*min-height: 600px;*/
+
+    height: 60%; 
 }
 
 #adminFooter{
@@ -69,6 +71,20 @@ html, body{
     /*border-bottom-style: double;
     border-bottom-width: 4px;
     border-bottom-color: #990033;*/
+}
+
+#adminVMenu{
+    display: inline-block;
+    position: relative;
+    /*width: 200px;*/
+    width: 100%;
+    padding-top: 30px;
+    background-color: #ffffff;
+    /*min-height: 490px;*/
+    text-align: center;
+    /*border: 3px solid yellow;*/
+    height: 100%;
+    border-right: double;
 }
 
 #adminHeaderTitle{

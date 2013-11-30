@@ -25,7 +25,7 @@ $chat = new chat();
         <?php include '../session_check.php'; ?>
 		<link rel="stylesheet" href="<?php echo constant("HOST11") . '/web/css/UserStyleSheet.css' ?>" type="text/css" />
 		<link rel="stylesheet" href="css/style.css"/>
-		<title>AJAX CHAT</title>
+		<title>Messages</title>
 		
 	</head>
 	<body>
@@ -46,8 +46,6 @@ $chat = new chat();
 			        <div id="welcome">Welcome, <?php echo strtoupper($_SESSION['name']) ?></div>
 			        <div  id="change_password">
 			            <b>Welcome to Online Thesis Management.</b>
-			        <br/>You have to change your default password before uploading your thesis.
-			        <br/><span style="color: green;font-size: 18px;">Ignore the above message if you have already changed your password.</span>
 			        </div>
 			    </div>
 			    
