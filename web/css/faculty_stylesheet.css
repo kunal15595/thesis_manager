@@ -201,7 +201,8 @@ For Index page
     width: 70%;
     background-color: #cccccc;
     float: left;
-    height: 25px;
+    /*height: 25px;*/
+    height: 10%;
     color: black;
     
     font-family: Verdana;

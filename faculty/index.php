@@ -3,6 +3,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <?php include '../config/config.php'; ?>
+        <?php include '../config/connect.php'; ?>
         <?php include 'PhpIncludeFiles/database/database_functions.php';?>
         <?php require_once 'check_session.php';?>
         
@@ -27,28 +28,31 @@
               </td>
               <td>  
                 <table> 
-                <tr> 
-                <div style="color: olive;font-size: 20px; text-align: center;width: 100%">****Welcome, <?php echo $_SESSION['name'] ?>****</div>
-                    </tr>        
-              <tr>
-                <div id="bTPanel">
-                    <div id="bTPanelTitle">B.Tech students under your guidance</div>
-                    <div id="bTPanelInfo">Click on the roll number for complete list of permission granting history</div>
-                    <div id="bTListHeader">
-                        <div id="bTSrlNo">S No.</div>
-                        <div id="bTRollNo">Roll Number</div>
-                        <div id="bTName">Name</div>
-                        <div id="bTThesisLink">Thesis Link</div>
-                        <div id="bTPermission">Permission</div>
-                        <div id="bTStatus">Status</div>
+                  <tr> 
+                     <div style="color: olive;font-size: 20px; text-align: center;width: 100%">****Welcome, <?php echo $_SESSION['name'] ?>****</div>
+                  </tr>        
+                  <tr>
+                    <div id="bTPanel">
+                        <div id="bTPanelTitle">B.Tech students under your guidance</div>
+                        <div id="bTPanelInfo">Click on the roll number for complete list of permission granting history</div>
+                        <div id="bTListHeader">
+                          
+                            <div id="bTSrlNo">S No.</div>
+                            <div id="bTRollNo">Roll Number</div>
+                            <div id="bTName">Name</div>
+                            <div id="bTThesisLink">Thesis Link</div>
+                            <div id="bTPermission">Permission</div>
+                            <div id="bTStatus">Status</div>
+                          </table>
+                        </div>
                     </div>
-                </div>
-              </tr>
+                  </tr>
               </table>
               </td>
             </table>
                 <?php 
-                   $result=getAllStudents("BT",$_SESSION["faculty_user_nm"]);
+                   $result=getAllStudents("BT",$_SESSION['user_nm']);
+                   echo $result;
                    if($result=="DONE"){
                        echo $_SESSION["innerHTMLSimple"];
                        unset ($_SESSION["innerHTMLSimple"]);

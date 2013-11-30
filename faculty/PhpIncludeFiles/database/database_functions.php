@@ -8,7 +8,8 @@
 //Contact at: tapan84silchar[at]gmail.com
 function getAllStudents($class, $advisor) {
     $result="NONE";
-    require '../../../config/connect.php';
+    include_once '../../../config/config.php';
+    include_once '../../../config/connect.php';
 
         $sql = "SELECT name,roll_number,S.user_nm as user_nm,permission,IFNULL( report_file_name, 'Not Uploaded' ) AS report_file_name FROM student as S LEFT OUTER JOIN projects as P ON S.user_nm=P.user_nm  WHERE class='" . $class . "' AND advisor_id='" . $advisor . "'";
         $sql_result = mysql_query($sql);
