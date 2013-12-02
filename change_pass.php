@@ -25,7 +25,10 @@
             </div>
             <div id="adminMiddle">
                 <div style="color: olive;font-size: 20px; text-align: center;width: 100%">****Welcome, <?php echo strtoupper($_SESSION['name']) ?>****</div>
-                <div  style="padding-top: 150px;text-align: center;font-size: 25px;color: #990000">
+               
+            </div>
+            <div id="rightPanel">
+                 <div  style="padding-top: 50px;text-align: center;font-size: 25px;color: #990000">
                     <form name="login" action="change_pass.php" method="POST">
                         <span style="text-align: center;font-size: 25px;color: green">Change your password</span>
                         <span style="color: #990000;font-size: 18px;font-style: italic">
@@ -35,20 +38,20 @@
                             <tr>
                                 <td align="right"><div style="font-size: 18px;color: blue;text-align: right">Current Password: </div></td>
                                 <td>
-                                    <input type="password" name="currentPass" id="currentPass" value="" size="30" onclick="clearAll()" onblur="enableNewPass()"/>
+                                    <input type="password" name="currentPass" id="currentPass" value="" size="20" onclick="clearAll()" onblur="enableNewPass()"/>
                                 </td>
                             </tr>
                             <tr>
                                 <td align="right"><div style="font-size: 18px;color: blue;text-align: right">New Password: </div></td>
                                 <td>
-                                    <input type="password" name="newPass1" id="newPass1" value="" size="30" onclick="enableNewPass()"/>
+                                    <input type="password" name="newPass1" id="newPass1" value="" size="20" onclick="enableNewPass()"/>
                                 </td>
 
                             </tr>
                             <tr>
                                 <td align="right"><div style="font-size: 18px;color: blue;text-align: right">Confirm Password: </div></td>
                                 <td>
-                                    <input type="password" name="newPass2" id="newPass2" value="" size="30" onblur="comparePass()"/>
+                                    <input type="password" name="newPass2" id="newPass2" value="" size="20" onblur="comparePass()"/>
                                 </td>
                             </tr>
                             <tbody id="security_display">

@@ -56,7 +56,7 @@ function getAllStudents($class, $advisor) {
             $inerhtml = $inerhtml . '<div id="ThesisLinkValue">' . $thesisLinkString . '</div>';
             $inerhtml = $inerhtml . '<div id="PermissionValue"><input type="button" 
                                      value="Grant Permission" name="permission" 
-                                     onclick="getPermission(\''.$row["user_nm"].'\',\''.$_SESSION["faculty_user_nm"].'\',\'StatusValue'.$class.'_'.$counter.'\')"/></div>';
+                                     onclick="getPermission(\''.$row["user_nm"].'\',\''.$_SESSION["user_nm"].'\',\'StatusValue'.$class.'_'.$counter.'\')"/></div>';
             $inerhtml = $inerhtml . '<div id="StatusValue'.$class.'_'.$counter.'" style="StatusValue">'.$permission_string.'</div>';
             $inerhtml = $inerhtml . '</div>';
         }
@@ -111,7 +111,7 @@ function changePasswd($faculty_id,$pass, $pass1) {
 
 function getAllUploadHistory($stud_id){
     $result="NONE";
-    require '../config/connect.php';
+    require '../../../config/connect.php';
 
         //Get student name........
         $sql = "select name from student where user_nm='".$stud_id."'";

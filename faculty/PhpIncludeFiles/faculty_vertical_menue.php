@@ -21,11 +21,11 @@
 	<a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/faculty/permission_bt.php'?>">B.Tech Permissions</a>
 </div>
 <div id="adminVMenuItem8" class="links">
-	<a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/logout.php'?>">Log Out</a>
+	<a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/faculty/permission_mt.php'?>">M.Tech Permissions</a>
 </div>
 <div id="adminVMenuItem9" class="links">
-	<a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/people/admin_people.php'?>">People</a>
+	<a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/faculty/event-calender/index.php'?>">Calender</a>
 </div>
 <div id="adminVMenuItem10" class="links">
-	<a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/event-calender/index.php'?>">Calender</a>
+	<a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/faculty/people/people.php'?>">People</a>
 </div>

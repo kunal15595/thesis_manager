@@ -38,7 +38,8 @@ $chat = new chat();
 		        <div id="adminHeaderLocation">Department of CSE, IIT Guwahati</div>
 		    </div>
 		    <?php require '../session_check.php'; ?>
-			<div id="middle">    
+			<div id="middle"> 
+
 			    <div id="adminVMenu">
 			        <?php include '../Macros/VerticalMenuItems.php'; ?>
 			    </div>
@@ -96,5 +97,6 @@ $chat = new chat();
 		<script src="jquery.js"></script>
 		<script src="primary.js"></script>
 		<script src="js/chat.js"></script>
+		<script type="text/javascript" src="../js/User.js"></script>
 	</body>	
 </html>

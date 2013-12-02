@@ -8,6 +8,7 @@ class chat extends core
 	// public $countt;
 	public function fetchMessage()
 	{
+		// die();
 		$user_type=$_SESSION['user_type'];
 		$user_nm=$_SESSION['user_nm'];
 		//extract messages
@@ -33,7 +34,7 @@ class chat extends core
 			 ";
 				$query_run=mysql_query($query);
 				$num_result=mysql_num_rows($query_run);
-			
+			// die($num_result);
 			return $query_run;
 		}
 		else if($user_type=="adm")

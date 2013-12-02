@@ -4,11 +4,6 @@ session_start();
 require 'core/init.php';
 
 $_SESSION['user'] = (isset($_GET['user']) === true) ? (int)$_GET['user'] : 0;
-
- require 'core/classes/core.php';
- require 'core/classes/chat.php';
-
-//echo 'user'.$_SESSION['user'].'<br>';
 $chat = new chat();
 
 // $chat->throwMessage(1, 'This is a test message');
@@ -20,12 +15,13 @@ $chat = new chat();
 <!DOCTYPE html>
 <html>
 	<head>
+
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<?php include '../config/config.php'; ?>
-        <?php include '../session_check.php'; ?>
-		<link rel="stylesheet" href="<?php echo constant("HOST11") . '/web/css/UserStyleSheet.css' ?>" type="text/css" />
+			
+        <?php require '../check_session.php'; ?>
+		<link rel="stylesheet" href="<?php echo constant("HOST11") . '/web/css/faculty_styles	heet.css' ?>" type="text/css" />
 		<link rel="stylesheet" href="css/style.css"/>
-		<title>AJAX CHAT</title>
+		<title>Notice Board</title>
 		
 	</head>
 	<body>
@@ -33,22 +29,17 @@ $chat = new chat();
 		<div id="bodyPanel">
 		    <div id="adminHeader">
 		        <div id="adminHeaderTitle">
-		            <?php include 'Macros/headerImage.php';?>
+		            <?php include '../../Macros/headerImage.php';?>
 		        </div>
-		        <div id="adminHeaderLocation">Department of CSE, IIT Guwahati</div>
+		        <div id="adminHeaderLocation"></div>
 		    </div>
-		    <?php require '../session_check.php'; ?>
+		    
 			<div id="middle">    
 			    <div id="adminVMenu">
-			        <?php include '../Macros/VerticalMenuItems.php'; ?>
+			        <?php include '../PhpIncludeFiles/faculty_vertical_menue.php'; ?>
 			    </div>
 			    <div id="adminMiddle">
-			        <div id="welcome">Welcome, <?php echo strtoupper($_SESSION['name']) ?></div>
-			        <div  id="change_password">
-			            <b>Welcome to Online Thesis Management.</b>
-			        <br/>You have to change your default password before uploading your thesis.
-			        <br/><span style="color: green;font-size: 18px;">Ignore the above message if you have already changed your password.</span>
-			        </div>
+			        
 			    </div>
 			    
 			    
@@ -90,7 +81,7 @@ $chat = new chat();
 				</div>
 			</div>
 			<div id="adminFooter">
-			        <?php include 'Macros/AdminFooter.php'; ?>
+			        <?php include '../../Macros/AdminFooter.php'; ?>
 			</div>
 		</div>
 		 

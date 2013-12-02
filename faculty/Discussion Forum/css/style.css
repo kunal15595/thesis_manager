@@ -9,28 +9,30 @@ body {
 }
 
 #rightPanel{
-	vertical-align: top;
-	position: relative;
-	background-color: #444;
-	border-radius: 7px;
-	border: 3px solid #ab3;
+	/*vertical-align: top;*/
+	/*position: relative;*/
+	/*background-color: #444;*/
+	/*border-radius: 7px;*/
+	/*border: 3px solid #ab3;*/
 	/*width: 360px;*/
-	width: 39%;
+	width: 49%;
+	overflow-y:scroll;
 	/*height: 645px;*/
-	height: 100%;
-	display: inline-block;
+	/*height: 100%;*/
+	/*display: inline-block;*/
 }
 #adminVMenu{
-	position: relative;
+	/*position: relative;*/
 	width: 12%;
+	/*border: 3px solid #345345;*/
+	/*display: inline-block;*/
 	
-	display: inline-block;
 }
-#adminMiddle{
-	position: relative;
-	width: 46%;
-	
-	display: inline-block;
+#facultyMiddle{
+	/*position: relative;*/
+	width: 31%;
+	/*border: 3px solid #236790;*/
+	/*display: inline-block;*/
 }
 
 /*

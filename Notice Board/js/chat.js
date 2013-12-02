@@ -18,7 +18,7 @@ chat.fetchMessage = function () {
 chat.throwMessage = function(message) {
 	var post_to = $('.select').val();
 	// post_to = select_value;
-	alert(message);
+	// alert(message);
 	// alert(post_to);
 	if ($.trim(message).length!=0) {
 		$.ajax({
@@ -26,7 +26,7 @@ chat.throwMessage = function(message) {
 			type: 'post',
 			data: { method: 'throw', message: message, post_to: post_to },
 			success: function(data) {
-				alert(data);
+				// alert(data);
 				chat.fetchMessage();
 				// chat.entry.val('');
 			}
@@ -44,7 +44,8 @@ $(function()
 		// alert("ok");
 		if(e.which===13 && e.shiftKey === true){
 			// alert("ok");
-			alert($('.entry').val());
+			// alert($('.entry').val());
+			alert("Notice posted!!")
 			//throw message
 			chat.throwMessage($('#posting').val());
 			e.defaultPrevented ;

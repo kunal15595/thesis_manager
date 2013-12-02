@@ -16,7 +16,7 @@
                 </div>
                 <div id="adminHeaderLocation">Department of CSE, IIT Guwahati</div>
             </div>
-            <?php //include 'session_check.php'; ?>
+            
             <div id="middle">
                 <div id="adminVMenu">
                     <?php include 'Macros/VerticalMenuItems.php'; ?>
@@ -24,7 +24,7 @@
                 <div id="adminMiddle">
                     <div id="welcome">Welcome, <?php echo strtoupper($_SESSION['name']) ?></div>
                     <div  id="change_password">
-                        <b>Online Thesis Management.</b>
+                        
                     </br>
                     <?php 
                         include 'config/connect.php';
@@ -56,7 +56,7 @@
                                 $years = floor($diff / (365*60*60*24));
                                 $months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
                                 $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
-                                $time_left = "Time left for thesis submission : ";
+                                $time_left = "Time left for thesis submission : ".'</br>';
                                 if ($years>0) {
                                     $time_left = $time_left." ".$years." years, ";
                                 }
@@ -66,14 +66,17 @@
                                 if ($days>0) {
                                     $time_left = $time_left." ".$days." days ";
                                 }
-                                $time_left = $time_left." left";
+                                $time_left = $time_left;
                             }
                         }
                     ?>
                     </div>
-                <div>
-                    <?php echo $time_left; ?>
-                </div>
+                
+            </div>
+            <script type="text/javascript" src="js/jquery.js"></script>
+            <script type="text/javascript" src="js/User.js"></script>
+            <div id="rightPanel">
+                <?php echo $time_left; ?>
             </div>
                 <div id="chat">
                 <?php
@@ -99,5 +102,6 @@
                 <?php include 'Macros/AdminFooter.php'; ?>
             </div>
         </div>
+
     </body>
 </html>

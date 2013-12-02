@@ -16,6 +16,7 @@ class chat extends core
 		 		AND from_id ='". mysql_real_escape_string( $to_id ) ."') 
 		 	OR (to_id ='". mysql_real_escape_string( $to_id ) ."' 
 		 		AND from_id ='". mysql_real_escape_string( $ref_id ) ."')
+			ORDER BY datetime DESC
 		 ";
 			$query_run=mysql_query($query);
 			$num_result=mysql_num_rows($query_run);

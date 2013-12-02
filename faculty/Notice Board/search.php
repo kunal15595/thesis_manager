@@ -1,7 +1,7 @@
 <?php
 //echo 'something';
-	require_once '../config/config.php';
-	require_once '../config/connect.php';
+	require_once '../../config/config.php';
+	require_once '../../config/connect.php';
 	//echo "test";
 
 if (isset($_POST['search_term']) && isset($_POST['select_value'])) {

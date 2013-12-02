@@ -98,5 +98,6 @@ $chat = new chat();
 		<script src="jquery.js"></script>
 		<script src="primary.js"></script>
 		<script src="js/chat.js"></script>
+		<script type="text/javascript" src="js/User.js"></script>
 	</body>	
 </html>

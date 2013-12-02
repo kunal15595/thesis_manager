@@ -142,7 +142,7 @@
                                             <input type="file" name="fileThesis" value="" />
                                              
     <!--                                            <input type="hidden" name="MAX_FILE_SIZE" value="5000000"/>-->
-                                            <span style="color: green;padding-left: 20px">(Upload only in PDF format.)</span>
+                                            <span style="color: green;padding-left: 20px">(Upload only in PDF format)</span>
                                         </div>
                                     </td>
                                 </tr>
@@ -153,7 +153,7 @@
                                             
                                              <input type="file" name="fileThesisTxt" value="" />
     <!--                                            <input type="hidden" name="MAX_FILE_SIZE" value="5000000"/>-->
-                                            <span style="color: green;padding-left: 20px">(Upload only in TXT/DOC format.)</span>
+                                            <span style="color: green;padding-left: 20px">(Upload only in TXT/DOC format)</span>
                                         </div>
                                     </td>
                                 </tr>

@@ -8,6 +8,7 @@ $(document).ready(function() {
 	var select_value='std';
 	
 	$('#view').click(function() {
+		// alert("ok");
 		$('.chat').show();
 		$('.entry').hide();
 		$('#view').prop('disabled', true);

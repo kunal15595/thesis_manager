@@ -1,7 +1,7 @@
 <?php
 require '../core/init.php';
-require_once '../../config/config.php';
-require_once '../../config/connect.php';
+require_once '../../../config/config.php';
+require_once '../../../config/connect.php';
 if (isset($_POST['method']) === true && empty($_POST['method']) === false ) {
 
 	$chat = new chat();
@@ -34,6 +34,7 @@ if (isset($_POST['method']) === true && empty($_POST['method']) === false ) {
 						<div class="message">
 							<p><?php echo $query_row2['body']; ?></p>
 							<a href="#" id="right"><?php echo $query_row2['posted_by']; ?></a>
+							
 						</div>
 					<?php	
 			}

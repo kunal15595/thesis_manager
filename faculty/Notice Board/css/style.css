@@ -16,7 +16,7 @@ body {
 	width: 90%;
 	height: 30%;
 	padding: 10px;
-	overflow-y: scroll;
+	/*overflow-y: scroll;*/
 	
 	color: black;
 	
@@ -29,11 +29,12 @@ body {
 	color: gray;
 	width: 90%;
 	border: 1px solid yellow;
-	/*float: right;*/
+	float: right;
 }
 
 .chat .message p {
 	/*float: right;*/
+	float: left;
 	width: 90%;
 }
 
@@ -58,47 +59,18 @@ body {
 }
 #message{
 	margin-top: 100px;
+	max-height: 300px;
+	min-width: 300px;
+	overflow-y:scroll;
 	padding: 20px;
 	float: left;
 	border: 1px solid green;
 }
 
 #bodyPanel{
-	
 	background-color: #fff;
-	
-	
 }
 
 #rightPanel{
-	vertical-align: top;
-	position: relative;
-	background-color: #444;
-	border-radius: 7px;
-	border: 3px solid #ab3;
-	/*width: 360px;*/
 	width: 30%;
-	/*height: 645px;*/
-	height: 100%;
-	display: inline-block;
 }
-#adminVMenu{
-	position: relative;
-	width: 12%;
-	
-	display: inline-block;
-}
-#adminMiddle{
-	position: relative;
-	width: 56%;
-	
-	display: inline-block;
-}
-
-/*
-#whole{
-	background-color: #fff;
-	width: 100%;
-	min-width: 400px;
-	border: 1px solid blue;
-}*/

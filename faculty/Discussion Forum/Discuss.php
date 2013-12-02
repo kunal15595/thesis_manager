@@ -1,7 +1,7 @@
 <?php
 session_start();
-include '../config/config.php';
-include '../config/connect.php';
+include '../../config/config.php';
+include '../../config/connect.php';
 
 // only show errors
 error_reporting(E_ERROR);
@@ -59,7 +59,7 @@ function PageHeader()
 <meta http-equiv="Content-Language" content="en-gb" />
 <?php include '../config/config.php'; ?>
       
-<link rel="stylesheet" href="<?php echo constant("HOST11") . '/web/css/UserStyleSheet.css' ?>" type="text/css" />
+<link rel="stylesheet" href="<?php echo constant("HOST11") . '/web/css/faculty_stylesheet.css' ?>" type="text/css" />
 <link rel="stylesheet" href="css/style.css"/>
 <title><?php print "$g_Title" ?></title>
 <style type="text/css" >
@@ -79,10 +79,12 @@ td {
 
 .articleTable {
 	position: relative;
-	width: 100%;
-	border: black solid 2px;
+	/*width: 100%;*/
+	border: red solid 2px;
 	background-color: white;
 	padding: 5px;
+	max-height: 10px;
+	overflow-y:scroll;
 }
 .bigText {
 	font-family: verdana, arial;
@@ -90,12 +92,12 @@ td {
 	font-weight: bold;
 	color: black;
 	padding-bottom: 10px;
-	border: 2px solid yellow;
+	/*border: 2px solid yellow;*/
 }
 .pageHeadline {
 	font-size: 12pt;
 	font-weight: bold;
-	border: 2px solid blue;
+	/*border: 2px solid blue;*/
 }
 .requiredWarning {
 	font-family: verdana, arial;
@@ -112,7 +114,7 @@ td {
 }
 .formBox {
 	color: #000000;
-	border:1px solid #cccccc;
+	border:1px solid yellow;
 	
 }
 -->
@@ -129,15 +131,10 @@ td {
 	    
 		<div id="middle">    
 		    <div id="adminVMenu">
-		        <?php include '../Macros/VerticalMenuItems.php'; ?>
+		        <?php include '../PhpIncludeFiles/faculty_vertical_menue.php'; ?>
 		    </div>
-		    <div id="adminMiddle">
-		        <div id="welcome">Welcome, <?php echo strtoupper($_SESSION['name']) ?></div>
-		        <div  id="change_password">
-		            <b>Welcome to Online Thesis Management.</b>
-		        <br/>You have to change your default password before uploading your thesis.
-		        <br/><span style="color: green;font-size: 18px;">Ignore the above message if you have already changed your password.</span>
-		        </div>
+		    <div id="facultyMiddle">
+		        
 		    </div>
 		    
 		    
@@ -148,7 +145,7 @@ td {
 				    <tr>
 				      <td align="left" colspan="3"><p class="bigText"><?php print "$g_Title" ?></p></td>
 				    </tr>
-				    <tr>
+				    <tr style="max-height:100px">
 				      <td valign="top" align="left" class="leftNavBar">
 				<span><a href="<?php print "$g_ThisPage" ?>"></a></span>
 				        </td>
@@ -622,7 +619,7 @@ function PrintSingleThread($thread,$error)
 		if ($line[3] == "")
 			print "$line[2]";
 		else
-			print "<a title=\"Click to send private email\" href=\"$g_ThisPage?cmd=newmailform&amp;message=$line[0]\">$line[2]</a>";
+			print "<a title=\"Click to send private email\" href=\"#\">$line[2]</a>";
 
 		print "<br />$line[6]</i></small></p>\n";
 	}
@@ -760,17 +757,9 @@ function ShowNewTopicForm($pageTitle, $title, $message, $error)
 	        <td valign="top" align="left">&nbsp;</td>
 	      </tr>
 	      <tr>
-	        <td valign="top" align="left">Full Name<span class="requiredWarning">*</span>:</td>
+	        <td valign="top" align="left">Name:<span class="requiredWarning">*</span>:</td>
 	        <td valign="top" align="left"><input class="formBox" type="text" name="fullname" value="<?php print "$cookie_fullname" ?>" size="64" /></td>
 	      </tr>
-	      <tr>
-	        <td valign="top" align="left">E-mail:</td>
-	        <td valign="top" align="left"><input class="formBox" type="text" name="email" value="<?php print "$cookie_email" ?>" size="64" /></td>
-	      </tr>
-	      <tr>
-                <td valign="top" align="left"></td>
-                <td valign="top" align="left"><span class="requiredWarning">* - Required for processing</span></td>
-              </tr>
 	      <tr>
                 <td valign="top" align="left"></td>
                 <td valign="top" align="left">&nbsp;</td>
@@ -841,141 +830,6 @@ function ShowReplyForm($msg, $thread, $error)
 	<?php
 	
 	PrintStandardFooter("");
-}
-
-function ShowNewMailForm($message, $msg, $error)
-{
-	global $g_ThisPage, $_COOKIE, $g_MessageListTableName, $g_ThreadListTableName;
-	$cookie_fullname = $_COOKIE['cookie_fullname'];
-	$cookie_email = $_COOKIE['cookie_email'];
-	$cookie_website = $_COOKIE['cookie_website'];
-	
-	$reply_to = "";
-	$subject = "";
-	
-	$query = "SELECT $g_MessageListTableName.Author,$g_ThreadListTableName.Title from $g_MessageListTableName LEFT JOIN $g_ThreadListTableName ON $g_MessageListTableName.ThreadID = $g_ThreadListTableName.ThreadID WHERE $g_MessageListTableName.MessageID = $message";
-	$result = mysql_query($query)
-	    or DBError("Failed while accessing thread information from the database");
-	    
-	if( mysql_num_rows($result) == 1 )
-	{
-		$line = mysql_fetch_row($result);
-		$reply_to = "$line[0]";
-		$subject = "$line[1]";
-	}
-	else
-	{
-		PageHeader();
-		PrintError("Unable to find message $message. The topic may have been deleted.");
-		PrintStandardFooter("");
-		return;
-	}
-	
-	PageHeader();
-	if( strlen($error) > 0 )
-		PrintError($error);
-		
-	?>
-	<form method="post" action="<?php print "$g_ThisPage" ?>">
-	  <div align="left">
-	    <table border="0" cellpadding="0" cellspacing="0" width="440">
-	      <tr>
-	        <td valign="top" align="left">Reply To:</td>
-	        <td valign="top" align="left"><strong><?php print "$reply_to" ?></strong></td>
-	      </tr>
-	      <tr>
-	        <td valign="top" align="left">Subject:</td>
-	        <td valign="top" align="left"><strong><?php print "$subject" ?></strong></td>
-	      </tr>
-	      <tr>
-	        <td valign="top" align="left"></td>
-	        <td valign="top" align="left">&nbsp;</td>
-	      </tr>
-	      <tr>
-	        <td valign="top" align="left">Message<span class="requiredWarning">*</span>:</td>
-	        <td valign="top" align="left"><textarea class="formBox" rows="10" name="msg" cols="43"><?php print "$msg" ?></textarea></td>
-	      </tr>
-	      <tr>
-                <td valign="top" align="left"></td>
-                <td valign="top" align="left"><span class="subtle">Do not use HTML tags. Surround URLs with spaces.</span></td>
-              </tr>
-	      <tr>
-	        <td valign="top" align="left"></td>
-	        <td valign="top" align="left">&nbsp;</td>
-	      </tr>
-	      <tr>
-	        <td valign="top" align="left">Full Name<span class="requiredWarning">*</span>:</td>
-	        <td valign="top" align="left"><input class="formBox" type="text" name="fullname" value="<?php print "$cookie_fullname" ?>" size="64" /></td>
-	      </tr>
-	      <tr>
-	        <td valign="top" align="left">E-mail<span class="requiredWarning">*</span>:</td>
-	        <td valign="top" align="left"><input class="formBox" type="text" name="email" value="<?php print "$cookie_email" ?>" size="64" /></td>
-	      </tr>
-	      <tr>
-                <td valign="top" align="left"></td>
-                <td valign="top" align="left"><span class="requiredWarning">* - Required for processing</span></td>
-              </tr>
-	      <tr>
-                <td valign="top" align="left"></td>
-                <td valign="top" align="left">&nbsp;</td>
-              </tr>
-	      <tr>
-	        <td valign="top" align="left"></td>
-	        <td valign="top" align="left"><input type="submit" value="Send Email" /></td>
-	      </tr>
-	    </table>
-	  </div>
-	  <input type="hidden" name="message" value="<?php print "$message" ?>" />
-	  <input type="hidden" name="cmd" value="submitnewmail" />
-	</form>
-	<?php
-	
-	PrintStandardFooter("");
-}
-
-function SendMail2( $toname, $toaddress, $fromname, $fromaddress, $subject, $message )
-{
-	$MP = "/usr/sbin/sendmail -t"; 
-	$spec_envelope = 1; 
-	// Access Sendmail
-	// Conditionally match envelope address
-	if($spec_envelope)
-	{
-		$MP .= " -f $fromaddress";
-	}
-	$fd = popen($MP,"w"); 
-	fputs($fd, "To: $toname <$toaddress>\n"); 
-	fputs($fd, "From: $fromname <$fromaddress>\n");
-	fputs($fd, "Subject: $subject\n"); 
-	fputs($fd, "X-Mailer: PHP4\n"); 
-	fputs($fd, $message); 
-	pclose($fd);
-}
-
-function SendEmailToPoster( $message, $msg, $fullname, $email )
-{
-	global $g_Title, $g_URL, $g_ThisPage, $g_ContactEmail, $g_MessageListTableName, $g_ThreadListTableName;
-	
-	$query = "SELECT $g_MessageListTableName.Author,$g_MessageListTableName.Email,$g_ThreadListTableName.Title,$g_MessageListTableName.ThreadID from $g_MessageListTableName LEFT JOIN $g_ThreadListTableName ON $g_MessageListTableName.ThreadID = $g_ThreadListTableName.ThreadID WHERE $g_MessageListTableName.MessageID = $message";
-	$result = mysql_query($query)
-	    or DBError("Failed to find poster information from the database");
-	    
-	if( mysql_num_rows($result) == 1 )
-	{
-		$line = mysql_fetch_row($result);
-		
-		$msg .= "\n\n";
-		$msg .= "-------------------------------------------------\n\n";
-		$msg .= "This message was sent on behalf of $email, from \"$g_Title\" in reply to your posting:\n\n";
-		$msg .= "$g_URL";
-		$msg .= "$g_ThisPage?cmd=show&thread=$line[3]\n\n";
-		$msg .= "Your email address is never revealed to the sender. Please report abuse to $g_ContactEmail.\n"; 
-		
-		SendMail2( $line[0], $line[1], $fullname, $email, $line[2], $msg );
-		return $line[3];
-	}
-	
-	return 0;
 }
 
 ?>

@@ -80,7 +80,7 @@ td {
 .articleTable {
 	position: relative;
 	width: 100%;
-	border: black solid 2px;
+	/*border: black solid 2px;*/
 	background-color: white;
 	padding: 5px;
 }
@@ -90,12 +90,12 @@ td {
 	font-weight: bold;
 	color: black;
 	padding-bottom: 10px;
-	border: 2px solid yellow;
+	/*border: 2px solid yellow;*/
 }
 .pageHeadline {
 	font-size: 12pt;
 	font-weight: bold;
-	border: 2px solid blue;
+	/*border: 2px solid blue;*/
 }
 .requiredWarning {
 	font-family: verdana, arial;
@@ -112,7 +112,7 @@ td {
 }
 .formBox {
 	color: #000000;
-	border:1px solid #cccccc;
+	/*border:1px solid #cccccc;*/
 	
 }
 -->
@@ -132,12 +132,7 @@ td {
 		        <?php include '../Macros/VerticalMenuItems.php'; ?>
 		    </div>
 		    <div id="adminMiddle">
-		        <div id="welcome">Welcome, <?php echo strtoupper($_SESSION['name']) ?></div>
-		        <div  id="change_password">
-		            <b>Welcome to Online Thesis Management.</b>
-		        <br/>You have to change your default password before uploading your thesis.
-		        <br/><span style="color: green;font-size: 18px;">Ignore the above message if you have already changed your password.</span>
-		        </div>
+		        
 		    </div>
 		    
 		    
@@ -187,7 +182,8 @@ td {
 		        <?php include 'Macros/AdminFooter.php'; ?>
 		</div>
 	</div>
-	 
+	 <script type="text/javascript" src="../js/jquery.js"></script>
+	 <script type="text/javascript" src="discuss.js"></script>
 </body>
 </html>
 <?php

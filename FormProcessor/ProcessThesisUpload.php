@@ -17,11 +17,14 @@ if (isset($_FILES["fileThesis"]) && isset($_FILES["fileThesisTxt"])) {
     //$permission = $_POST['chkPermission'];
     $abstract = htmlspecialchars(addslashes($_POST['txtAbstract']));
     $thesisFile = $_FILES["fileThesis"];
+    $thesisFileTxt = $_FILES["fileThesisTxt"];
     $isOverWrite = $_POST['chkOverwrite'];
     $time_now = mktime(date('H') + 5, date('i') + 30, date('s'), date('m'), date('d'), date('Y'));
 echo "2";
     $newFileName = $_SESSION['roll_number'] . '-' . $_SESSION['class'] . "PI.pdf";
-    if ($title == "" && $abstract == "" && !isInFileFormat($thesisFile["name"], "pdf")) {
+    $newFileNameTxt = $_SESSION['roll_number'] . '-' . $_SESSION['class'] . "PI.txt";
+    
+    if ($title == "" && $abstract == "" && !isInFileFormat($thesisFile["name"], "pdf") && !isInFileFormat($thesisFileTxt["name"], "txt")) {
         $pageResultString = '<br/><b>Uploading Failed. May be file size is more than 6MB.</b>';
     } else if ($_FILES["fileThesis"]["error"] > 0) {
         $pageResultString = "<br/><br/>File uploading failed. Error: ".codeToMessage($_FILES["fileThesis"]["error"]).".  Please try again.";
@@ -59,6 +62,7 @@ echo "3";
             $file_exist = FALSE;
             $file_renamed = FALSE;
             $fullpath = "../Upload/" . $_SESSION['class'] . "/pdf/" . $newFileName;
+            $fullpathTxt = "../Upload/" . $_SESSION['class'] . "/text/" . $newFileNameTxt;
             //If file already exists, then rename it to a temp file. The concept of renaming and not deleting is that
             // the new file may not upload successfully. In that case we will lose both the files.
             if (file_exists($fullpath)) {
@@ -72,7 +76,9 @@ echo "3";
             
                  $info = pathinfo($fullpath);
                 $newpath = $info['dirname'] . '/' . $tag. $info['filename'].'.'.'pdf';
+                $newpathTxt = $info['dirname'] . '/' . $tag. $info['filename'].'.'.'txt';
                  $file_renamed = rename($fullpath , $newpath);
+                 $file_renamedTxt = rename($fullpathTxt , $newpathTxt);
             }
 
             //If the file was exists but the renaming operation was unsuccessfull.
@@ -80,13 +86,14 @@ echo "3";
                 $pageResultString = '<br/><br/><b>Uploading Successful!!!!';
             } else {
                 //Copy the file to exact location.
-                $res1 = move_uploaded_file($_FILES["fileThesis"]["tmp_name"], "../Upload/" . $_SESSION['class'] . "/pdf/" . $newFileName);
+                    $res1 = move_uploaded_file($_FILES["fileThesis"]["tmp_name"], "../Upload/" . $_SESSION['class'] . "/pdf/" . $newFileName);
+                    $res2 = move_uploaded_file($_FILES["fileThesisTxt"]["tmp_name"], "../Upload/" . $_SESSION['class'] . "/text/" . $newFileNameTxt);
 
-                if ($res1 == FALSE) {
-                    $pageResultString = '<br/><br/><b>Uploading Failed!!!!!!</b><br/>Unable to store your file in ../Upload/'.$_SESSION['class'].'/'.$newFileName.'Please try again.';
+                if ($res1 == FALSE || $res2 == FALSE) {
+                    $pageResultString = '<br/><br/><b>Uploading Failed!!!!!!</b><br/>Unable to store your file in ../Upload/'.$_SESSION['class'].'/<br>'.'Please try again.';
                 } else {
                     unlink("../Upload/" . $_SESSION['class'] . "/pdf/temp_" . $newFileName);
-                    $log_file_name = $_SESSION["roll_number"] . '-' . date("dMY-G-i-u") . '.pdf';
+                    $log_file_name = $_SESSION["roll_number"] . '-' . date("d-M-Y-G:i") . '.pdf';
                     copy("../Upload/" . $_SESSION['class'] . "/" . $newFileName, "../Upload/LOG/" . $_SESSION['class'] . "/pdf/" . $log_file_name);
                     $pageResultString = '<br/><b>Uploading Successfull.</b> 
                                      <br/><br/>Verify the followings by clicking <a href="status.php">here</a>:
