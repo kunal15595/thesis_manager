@@ -84,11 +84,12 @@ function getLastDate($class) {
 function getAllRecords() {
     $result = getLastDate($_SESSION['class']);
     
-    echo $result;
+    // echo $result;
     if ($result != "DONE") {
         return "DBCONNECTION_ERROR";
     }
-    require '../config/connect.php';
+    // require '../config/config.php';
+    // require '../config/connect.php';
         $sql = "SELECT roll_number,name,P.user_nm as user_nm,S.class as class,thesis_title,report_file_name,advisor_name,abstract,P.submitted_at as submitted_at
                 FROM student as S,advisor as A,projects as P where S.user_nm=P.user_nm and S.advisor_id=A.advisor_id and S.user_nm='" . $_SESSION['user_nm'] . "'";
         $rs = mysql_query($sql);
@@ -108,7 +109,7 @@ function getAllRecords() {
             $inerhtml.='<tr><td>
                        <table>
                           <tr>
-                             <td><div style="height: 50px; padding-top: 20px; text-align: center;color: #006600;font-family: Verdana,Arial,Helvetica,sans-serif;font-size: 18px;"><b>' . stripslashes($row["thesis_title"]) . '</b></div><td>
+                             <td><div style="height: 50px;  text-align: center;color: #006600;font-family: Verdana,Arial,Helvetica,sans-serif;font-size: 18px;"><b>' . stripslashes($row["thesis_title"]) . '</b></div><td>
                           </tr>
                           <tr>
                             <td>
@@ -159,7 +160,7 @@ function getAllRecords() {
         }
     
     mysql_close($con);
-    echo $result;
+    // echo $result;
     return $result;
 }
 

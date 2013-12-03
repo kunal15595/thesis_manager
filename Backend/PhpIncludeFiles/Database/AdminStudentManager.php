@@ -7,6 +7,18 @@
 
 //Contact at: tapan84silchar[at]gmail.com
 //require '../../config/config.php';
+define("HOST11", "http://localhost/ProjectUploader");
+define("HOSTNAME", "localhost");
+define("USERNAME", "root");
+define("PASS", "kunal");
+define("DBNAME", "project");
+if (!($con = mysql_connect(constant("HOSTNAME"), constant("USERNAME"), constant("PASS")))) {
+    $result = "SERVER_CONNECTION_ERROR";
+    die($result);
+} else if (!($select = mysql_select_db(constant("DBNAME"), $con))) {
+    $result = "DB_CONNECTION_ERROR";
+     die($result);
+} 
 
 function processStudentCSVFile($file) {
     $fp = fopen($file["tmp_name"], "r");
@@ -79,7 +91,7 @@ function processStudentCSVFile($file) {
 function addBulkStudent($studentRecords, $class) {
     $result;
     $DuplicateCSVRecords = "";
-    require '../../../config/connect.php';
+    
     $totalRecord = count($studentRecords);
     $recordIndex = 0;
 
@@ -126,7 +138,7 @@ function isInCorrectFormat($line) {
 
 function getAllStudents($class) {
     $result;
-    require '../../config/connect.php';
+    
     $sql = "SELECT name,roll_number,user_nm,password from student where class='" . $class . "'";
     $result = mysql_query($sql);
     $flag = FALSE;
@@ -174,7 +186,7 @@ function getAllStudents($class) {
 
 function getAllFaculties() {
     $result = "NONE";
-    require '../../../config/connect.php';
+    
     $sql = "SELECT advisor_name,advisor_id from advisor order by advisor_name";
     $sql_result = mysql_query($sql);
     $flag = FALSE;
@@ -199,7 +211,7 @@ function getAllFaculties() {
 
 function getAllFacultiesForEditForm($advisor_id) {
     $result = "NONE";
-    require '../../../config/connect.php';
+    
     $sql = "SELECT advisor_name,advisor_id from advisor order by advisor_name";
     $sql_result = mysql_query($sql);
     $flag = FALSE;

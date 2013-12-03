@@ -116,7 +116,7 @@ body {
 	background-color: #ddd;
 	border: 1px solid #555;
 	border-radius: 4px;
-	border-color: #999;
+	border-color: #ddd;
 	text-decoration: none;
 	display: block;
 	
@@ -169,10 +169,14 @@ body {
 }*/
 
 .dropdown{
+	margin: 10px;
 	float: left;
+	width: 50%;
 }
 #autosuggest, #profile{
 	float: left;
+	width: 100%;
+	margin: 10px;
 }
 #rightPanel{
 	width: 20%;

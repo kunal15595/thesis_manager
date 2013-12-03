@@ -3,6 +3,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <?php include '../../config/config.php'; ?>
+        <?php include '../../config/connect.php'; ?>
+        
         <?php include '../PhpIncludeFiles/Database/AdminStudentManager.php'; ?>
         <?php include '../check_session.php';?>
         

@@ -64,7 +64,9 @@ html, body{
     text-align: center;
     /*border: 3px solid yellow;*/
     height: 94%;
-    border-right: double;
+    /*border-right: double;*/
+
+    background: linear-gradient(to right, green, white);
 }
 
 #adminMiddle{
@@ -94,7 +96,9 @@ html, body{
     /*border: 3px solid brown;*/
     /*overflow-y: scroll;*/
     vertical-align: top;
-    border-left: double;
+    /*border-left: double;*/
+
+    background: linear-gradient(to left, green, white);
 }
 
 #adminFooter{
@@ -113,7 +117,8 @@ html, body{
     color: darkgreen;
     font-family: cursive;
     padding-top: 10px;
-    border-bottom-style: double;
+    font-size: 19px;
+    /*border-bottom-style: double;*/
     border-bottom-width: 4px;
     border-bottom-color: #990033;
 
@@ -237,6 +242,8 @@ html, body{
     font-family: cursive;
     text-decoration: none;
     /*font-size: 18px;*/
+}.adminVMenuItemLInk:hover{
+    color: white;
 }
 
 a{

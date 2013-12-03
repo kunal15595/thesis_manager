@@ -23,18 +23,21 @@
                    <?php include 'PhpIncludeFiles/faculty_vertical_menue.php'; ?>
                 </div>
                 <div id="facultyMiddle">
-                    <div style="color: olive;font-size: 20px; text-align: center;">Welcome, <?php echo $_SESSION['name']?></div>
                     
-                </div>
-            
-                <div id="rightPanel">
-                   
                     <div  style="padding-top: 50px;text-align: center;font-size: 25px;color: #990000">
                         <form name="login" action="change_pass.php" method="POST">
+                            
                             <span style="text-align: center;font-size: 25px;color: green">Change your password</span>
-                            <span style="color: #990000;font-size: 18px;font-style: italic">
-                                <br/>**Password can only contain alphabets and numbers. Length must be between 6 to 12.**
+                            <ul style="list-style-type: none">
+                            <li><span style="color: #990000;font-size: 18px;font-style: italic">
+                                <br/>Password can only contain alphabets and numbers
                             </span>
+                            </li>
+                            <li><span style="color: #990000;font-size: 18px;font-style: italic">
+                                <br/>Length must be between 6 to 12
+                            </span>
+                            </li>
+                            </ul>
                             <table align="center">
                                 <tr>
                                     <td align="right"><div style="font-size: 18px;color: blue;text-align: right">Current Password: </div></td>
@@ -69,6 +72,10 @@
                         </form>
                     </div>
 
+                </div>
+            
+                <div id="rightPanel">
+                   
                 </div>
             </div>
             <div id="adminFooter">

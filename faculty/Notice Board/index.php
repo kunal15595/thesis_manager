@@ -19,7 +19,7 @@ $chat = new chat();
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 			
         <?php require '../check_session.php'; ?>
-		<link rel="stylesheet" href="<?php echo constant("HOST11") . '/web/css/faculty_styles	heet.css' ?>" type="text/css" />
+		<link rel="stylesheet" href="<?php echo constant("HOST11") . '/web/css/faculty_stylesheet.css' ?>" type="text/css" />
 		<link rel="stylesheet" href="css/style.css"/>
 		<title>Notice Board</title>
 		
@@ -38,46 +38,45 @@ $chat = new chat();
 			    <div id="adminVMenu">
 			        <?php include '../PhpIncludeFiles/faculty_vertical_menue.php'; ?>
 			    </div>
-			    <div id="adminMiddle">
-			        
-			    </div>
+			    <div id="facultyMiddle">
+	        		<div id="select">
+	        		<?php if($_SESSION['user_type']!='std'){
+	        		?>
+	        		    <div id="send_to">Post To :
+	        	            <select class="select" name="user_type" >
+	        	                <?php include 'send.php'; ?>
+	        	            </select>
+	        	        </div>
+	        	    <?php }
+	        	    ?>
+	        		    <div id="compose">
+	        		    	<?php if($_SESSION['user_type']!='std'){
+	        		    	?>
+	            				<input id="chat" type="button" value="Compose" />
+	            			<?php }
+	            			?>
+	            			<input id="view" type="button" value="View" />
+	            		</div>
+	        		    <br/>
+	        		</div>
+	        		<div id="message" class="chat">
+	        			<div>
+	        				<div class="messages">
+	        					<div class="message">
+	        						
+	        					</div>
+	        				</div> 
+	        			</div>
+	        			
+	        		</div>
+	        		<div class="entry">
+	        			<textarea id="posting"  placeholder="Post here...     Press Enter for new line.  Use Shift + Enter to submit"></textarea>
+	        		</div>
+	        	</div>
+			    
 			    
 			    
 				<div id="rightPanel">
-					<div id="select">
-					<?php if($_SESSION['user_type']!='std'){
-					?>
-					    <div id="send_to">Post To :
-				            <select class="select" name="user_type" >
-				                <?php include 'send.php'; ?>
-				            </select>
-				        </div>
-				    <?php }
-				    ?>
-					    <div id="compose">
-					    	<?php if($_SESSION['user_type']!='std'){
-					    	?>
-			    				<input id="chat" type="button" value="Compose" />
-			    			<?php }
-			    			?>
-			    			<input id="view" type="button" value="View" />
-			    		</div>
-					    <br/>
-					</div>
-					<div id="message" class="chat">
-						<div>
-							<div class="messages">
-								<div class="message">
-									<!-- <a href="#">kunal</a> says:
-									<p>dvsdfvsfdvfdv</p> -->
-								</div>
-							</div> 
-						</div>
-						
-					</div>
-					<div class="entry">
-						<textarea id="posting"  placeholder="Post here...     Press Enter for new line.  Use Shift + Enter to submit"></textarea>
-					</div>
 				</div>
 			</div>
 			<div id="adminFooter">

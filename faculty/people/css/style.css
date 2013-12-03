@@ -66,7 +66,11 @@ body {
 	/*width: 40%;*/
 
 }
+#profile{
+	width: 100%;
 
+	text-align: center;
+}
 
 .autosuggest {
 	list-style-type: none;
@@ -80,6 +84,7 @@ body {
 	padding: 4px;
 	border: 1px solid #000;
 	padding-bottom: 0px;
+	text-align: center;
 }
 
 .result{
@@ -129,6 +134,7 @@ body {
 }
 #send_to , #start{
 	margin: auto;
+	text-align: center;
 
 }
 #message{
@@ -150,15 +156,6 @@ body {
 	
 }
 
-#rightPanel{
-	vertical-align: top;
-	position: relative;
-	display: inline-block;
-}
-#adminVMenu{
-	position: relative;
-	display: inline-block;
-}
 
 /*
 #whole{
@@ -168,11 +165,11 @@ body {
 	border: 1px solid blue;
 }*/
 
-.dropdown{
-	float: left;
+#autosuggest, #profile, .dropdown{
+	width: 100%;
 }
-#autosuggest, #profile{
-	float: left;
+#facultyMiddle{
+	width: 30%;
 }
 #rightPanel{
 	width: 20%;

@@ -33,7 +33,7 @@ if (isset($_POST['method']) === true && empty($_POST['method']) === false ) {
 					?>
 						<div class="message">
 							<p><?php echo $query_row2['body']; ?></p>
-							<a href="#" id="right"><?php echo $query_row2['posted_by']; ?></a>
+							<a href="#" id="right"><?php echo $query_row2['posted_by']; echo "  ";  echo $query_row2['datetime']; ?></a>
 							
 						</div>
 					<?php	

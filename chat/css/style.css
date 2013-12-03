@@ -63,10 +63,10 @@ body {
 	padding: 0;
 	border: 1;
 	/*width: 200px;*/
-	width: 70%;
+	width: 50%;
 	border-radius: 3px;
 	/*position: relative;*/
-	padding: 4px;
+	padding: 7px;
 	border: 1px solid #000;
 	padding-bottom: 0px;
 }
@@ -117,7 +117,7 @@ body {
 }
 #send_to , #start{
 	margin: auto;
-
+	padding: 30px;
 }
 #message{
 	margin-top: 100px;
@@ -134,7 +134,7 @@ body {
 #rightPanel{
 	vertical-align: top;
 	position: relative;
-	
+	width: 20%;
 	display: inline-block;
 }
 #adminVMenu{
@@ -144,6 +144,6 @@ body {
 }
 #adminMiddle{
 	position: relative;
-	
+	padding: 30px;
 	display: inline-block;
 }

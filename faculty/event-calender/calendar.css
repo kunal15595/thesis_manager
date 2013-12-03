@@ -1,5 +1,6 @@
 #Calendar {
 	width:300px;	
+	padding-left: 100px;
 }
 
 #Calendar td {
@@ -50,6 +51,7 @@
 
 #Events {
 	width:300px;	
+	padding-left: 100px;
 }
 
 #Events h2 {

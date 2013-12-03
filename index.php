@@ -14,7 +14,7 @@
                 <div id="adminHeaderTitle">
                     <?php include 'Macros/headerImage.php';?>
                 </div>
-                <div id="adminHeaderLocation">Department of CSE, IIT Guwahati</div>
+                <div id="adminHeaderLocation"></div>
             </div>
             
             <div id="middle">
@@ -22,7 +22,7 @@
                     <?php include 'Macros/VerticalMenuItems.php'; ?>
                 </div>
                 <div id="adminMiddle">
-                    <div id="welcome">Welcome, <?php echo strtoupper($_SESSION['name']) ?></div>
+                    <div id="welcome">Welcome, <?php echo $_SESSION['name'] ?></div>
                     <div  id="change_password">
                         
                     </br>
@@ -56,7 +56,7 @@
                                 $years = floor($diff / (365*60*60*24));
                                 $months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
                                 $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
-                                $time_left = "Time left for thesis submission : ".'</br>';
+                                $time_left = "<strong>Time left for thesis submission</strong>".'</br>';
                                 if ($years>0) {
                                     $time_left = $time_left." ".$years." years, ";
                                 }
@@ -71,12 +71,17 @@
                         }
                     ?>
                     </div>
+                <?php echo $time_left; ?>
+                <br>
+                <strong>Last login</strong><br>
+                Time:<?php echo $_SESSION['login_time']; ?><br>
                 
+                Ip:<?php echo $_SESSION['ip_address']; ?>
             </div>
             <script type="text/javascript" src="js/jquery.js"></script>
             <script type="text/javascript" src="js/User.js"></script>
             <div id="rightPanel">
-                <?php echo $time_left; ?>
+                
             </div>
                 <div id="chat">
                 <?php

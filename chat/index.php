@@ -43,48 +43,44 @@ $chat = new chat();
 			        <?php include '../Macros/VerticalMenuItems.php'; ?>
 			    </div>
 			    <div id="adminMiddle">
-			        <div id="welcome">Welcome, <?php echo strtoupper($_SESSION['name']) ?></div>
-			        <div  id="change_password">
-			            <b>Welcome to Online Thesis Management.</b>
-			        </div>
-			    </div>
-			    
+			        		<div id="select">
+			        		    <div id="send_to">Send To :
+			        	            <select class="select" name="user_type" >
+			        	                <option id="std" value="std" selected>Student</option>
+			        	                <option id="fac" value="fac" >Faculty</option>
+			        	                <option id="adm" value="adm">Admin</option>
+			        	            </select>
+			        	        </div>
+			        	        <div id="autosuggest">
+			        				<input type="text" class="autosuggest" placeholder="Search Name..."/>
+			        		    </div>
+			        		    
+			            		<div class="dropdown">
+			            			<ul class="result">
+			            			</ul>
+			            		</div>
+			        		    <div id="start">
+			            			<input id="chat" type="button" value="Start" placeholder="Start" disabled="true"/>
+			            		</div>
+			        		    <br/>
+			        		</div>
+			        		<div id="message" class="chat">
+			        			<div>
+			        				<div id="scroll" class="messages">
+			        					<div class="message">
+			        						<!-- <a href="#">kunal</a> says:
+			        						<p>dvsdfvsfdvfdv</p> -->
+			        					</div>
+			        				</div> 
+			        			</div>
+			        			<div>
+			        				<textarea class="entry" placeholder="Type here...     Press Enter for new line.  Use Shift + Enter to submit"></textarea>
+			        			</div>
+			        		</div>
+			        	</div>
 			    
 				<div id="rightPanel">
-					<div id="select">
-					    <div id="send_to">Send To :
-				            <select class="select" name="user_type" >
-				                <option id="std" value="std" selected>Student</option>
-				                <option id="fac" value="fac" >Faculty</option>
-				                <option id="adm" value="adm">Admin</option>
-				            </select>
-				        </div>
-				        <div id="autosuggest">
-							<input type="text" class="autosuggest" placeholder="Search Name..."/>
-					    </div>
-					    
-			    		<div class="dropdown">
-			    			<ul class="result">
-			    			</ul>
-			    		</div>
-					    <div id="start">
-			    			<input id="chat" type="button" value="Start" placeholder="Start" disabled="true"/>
-			    		</div>
-					    <br/>
-					</div>
-					<div id="message" class="chat">
-						<div>
-							<div id="scroll" class="messages">
-								<div class="message">
-									<!-- <a href="#">kunal</a> says:
-									<p>dvsdfvsfdvfdv</p> -->
-								</div>
-							</div> 
-						</div>
-						<div>
-							<textarea class="entry" placeholder="Type here...     Press Enter for new line.  Use Shift + Enter to submit"></textarea>
-						</div>
-					</div>
+					
 				</div>
 			</div>
 			<div id="adminFooter">

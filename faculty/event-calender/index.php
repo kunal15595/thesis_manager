@@ -4,7 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <?php include '../../config/config.php'; ?>
         <?php include '../../check_session.php'; ?>
-        
+        <?php include '../../config/connect.php'; ?>
         <link rel="stylesheet" href="<?php echo constant("HOST11") . '/web/css/faculty_stylesheet.css' ?>" type="text/css" />
         <link href="calendar.css" rel="stylesheet" type="text/css" />
         <title>Calender</title>
@@ -15,7 +15,7 @@
                 <div id="adminHeaderTitle">
                     <?php include '../../Macros/headerImage.php';?>
                 </div>
-                <div id="adminHeaderLocation">Department of CSE, IIT Guwahati</div>
+                <div id="adminHeaderLocation"></div>
             </div>
             
             <div id="middle">
@@ -23,14 +23,14 @@
                     <?php include '../../faculty/PhpIncludeFiles/faculty_vertical_menue.php'; ?>
                 </div>
                 <div id="facultyMiddle">
-                    <div id="welcome">Welcome, <?php echo strtoupper($_SESSION['name']); ?></div>
+                    <div id="Calendar"> </div>
+                    <div id="Events"> </div>
+                    <script language="javascript" src="calendar.js"></script>
                 </div>
 		            <script type="text/javascript" src="../js/jquery.js"></script>
 		            <script type="text/javascript" src="../js/User.js"></script>
 	            <div id="rightPanel">
-	                <div id="Calendar"> </div>
-	                <div id="Events"> </div>
-	                <script language="javascript" src="calendar.js"></script>
+	                
 	            </div>  
             </div>
             <div id="adminFooter">

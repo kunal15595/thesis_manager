@@ -4,8 +4,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <?php 
         include '../../config/config.php'; 
+        include '../../config/connect.php'; 
         include '../PhpIncludeFiles/Database/AdminStudentManager.php';
-        require '../check_session.php';
+        include '../check_session.php';
         ?>
         <link rel="stylesheet" href="<?php echo constant("HOST11") . '/web/css/AdminStyleSheet.css' ?>" type="text/css" />
         <link rel="stylesheet" href="../../web/css/adminStudentStyleSheet.css" type="text/css" />
@@ -23,7 +24,7 @@
         if ($roll == "NONE") {
             $result = "NONE";
         }  else {
-            $sql = "SELECT name,roll_number,user_nm,password,class,advisor_id from student where roll_number='" . $roll . "'";
+            $sql = "SELECT name,roll_number,user_nm,password,class,advisor_id from student where roll_number='".$roll."'";
             $rs = mysql_query($sql);
             $row = mysql_fetch_assoc($rs);
             if ($row) {
@@ -38,7 +39,7 @@
             mysql_close($con);
         }
         ?>
-    </head>
+    </head>jk   
     <body>
         <div id="bodyPanel">
             <div id="adminHeader">

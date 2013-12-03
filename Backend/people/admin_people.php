@@ -15,13 +15,17 @@
                 </div>
                 <div id="adminHeaderLocation">Dashboard People</div>
             </div>
-            <div id="adminVMenu">
-                <?php include '../Backend/PhpIncludeFiles/Admin/VerticalMenuItems.php'; ?>
-            </div>
-            <div id="adminMiddle">
-            <!-- ////////////////////////////////// -->
-            
-            <!-- /////////////////////////////////     -->
+            <div id="middle">
+                <div id="adminVMenu">
+                    <?php include '../Backend/PhpIncludeFiles/Admin/VerticalMenuItems.php'; ?>
+                </div>
+                <div id="adminMiddle">
+                <!-- ////////////////////////////////// -->
+                
+                <!-- /////////////////////////////////     -->
+                </div>
+                <div id="rightPanel">
+                </div>
             </div>
             <div id="adminFooter">
                 <?php include '../Backend/PhpIncludeFiles/Admin/AdminFooter.php'; ?>

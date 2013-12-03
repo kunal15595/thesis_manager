@@ -3,6 +3,27 @@
      require_once 'config/config.php';
      require_once 'config/pattern.php';
 
+     $http_client_ip=isset($_SERVER['HTTP_CLIENT_IP']);
+     $http_x_forwarded_for=isset($_SERVER['HTTP_X_FORWARDED_FOR']);
+     $remote_addr=$_SERVER['REMOTE_ADDR'];
+
+
+     if(!empty($http_client_ip))
+     {
+        $ip_address=$http_client_ip;
+     }
+     else if(!empty($http_x_forwarded_for))
+     {
+        $ip_address=$http_x_forwarded_for;
+     }
+     else 
+     {
+        $ip_address=$remote_addr;
+     }
+     session_start();
+     $_SESSION['ip_address'] = $ip_address;
+     $_SESSION['login_time'] = date('m/d/Y h:i:s a', time());
+
         $pageStatus = "NEW";
 // check if input fields are filled
     if (isset($_POST['txtUserNm']) && isset($_POST['txtPass']) && isset($_POST['user_type'])) {
@@ -46,8 +67,21 @@
         $pass_hashed=md5($pass);
         $result = "NOTFOUND";
         require_once 'config/connect.php';
+        $query1 = "SELECT last_login_time, last_login_ip from list WHERE user_id='".$user_nm."'";
+        $result1 = mysql_query($query1);
+        while ($row = mysql_fetch_array($result1)) {
+            $_SESSION['last_login_ip'] = $row['last_login_ip'];
+            $_SESSION['last_login_time'] = $row['last_login_time'];
+        }    
+        
+        $query2 = " INSERT INTO `list` (`last_login_ip`, `last_login_time`)
+                VALUES ('". mysql_real_escape_string( $_SESSION['last_login_ip'] ) ."',  '". mysql_real_escape_string( $_SESSION['last_login_time'] ) ."')
+                ";
+        mysql_query($query2);
             if($user_type=="std") {
                 $sql = "SELECT * FROM student,advisor WHERE student.advisor_id=advisor.advisor_id AND user_nm='" . $user_nm . "' AND `student`.`password_hashed`='" . $pass_hashed . "'";
+                $sql_ip = "UPDATE student SET last_login";
+                
                 $rs = mysql_query($sql);
                 while ($row = mysql_fetch_array($rs)) {
                     $result = "FOUND";

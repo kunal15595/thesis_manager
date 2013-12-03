@@ -73,9 +73,10 @@ html, body{
     color: darkgreen;
     font-family: cursive;
     padding-top: 10px;
-    border-bottom-style: double;
-    border-bottom-width: 4px;
-    border-bottom-color: #990033;
+    font-size: 19px;
+    /*border-bottom-style: double;*/
+    /*border-bottom-width: 4px;*/
+    /*border-bottom-color: #990033;*/
     /*border-bottom: double;*/
 }
 
@@ -88,13 +89,16 @@ html, body{
     width: 16%;
     padding-top: 30px;
     background-color: #55ff55;
+
     /*min-height: 490px;*/
     text-align: center;
     /*border: 3px solid yellow;*/
     height: 90%;
     min-width: 180px;
     /*border:2px solid magenta;*/
-    border-right: double;
+    /*border-right: double;*/
+
+    background: linear-gradient(to right, green, white);
 }
 #facultyMiddle{
     display: inline-block;
@@ -121,8 +125,10 @@ html, body{
     background-color: #55ff55;
     position: relative;
     float: right;
-    border-left: double;
+    /*border-left: double;*/
     /*border: 3px solid blue;*/
+
+    background: linear-gradient(to left, green, white);
 }
 #adminHeaderTitle{
     width: inherit;
@@ -147,6 +153,9 @@ html, body{
 #adminMiddleContent{
     /*width: 940px;*/
     width: 70%;
+    overflow: hidden;
+    overflow-y:scroll;
+    max-height: 500px;
 }
 
 
@@ -195,18 +204,19 @@ html, body{
     width: inherit;
     color: darkgreen;
     font-family: cursive;
-    text-decoration: none;
-    font-size: 18px;
+    /*text-decoration: none;*/
+    font-size: 19px;
     
-}
-.links{
-    border-bottom: double;
+}.adminVMenuItemLInk:hover{
+    color: white;
 }
 
 a{
     text-decoration: none;
 }
-
+a:hover{
+    color:#FF00FF;
+}
 
 /*
 For Index page
@@ -222,9 +232,9 @@ For Index page
     /*min-height: 200px;
     max-height: 400px;*/
     overflow: hidden;
-    min-height: 150px;
-    max-height: 200px;
-    overflow-y:scroll;
+    min-height: 250px;
+    max-height: 260px;
+    /*overflow-y:scroll;*/
 }
 #bTPanelTitle{
     width: 100%;
@@ -252,7 +262,7 @@ For Index page
     background-color: #cccccc;
     float: left;
     /*height: 25px;*/
-    height: 10%;
+    height: 20%;
     color: black;
     
     font-family: Verdana;
@@ -313,9 +323,9 @@ For Index page
     /*float: left;*/
     /*border: 5px  solid yellow;*/
      overflow: hidden;
-    min-height: 150px;
-    max-height: 200px;
-    overflow-y:scroll;
+    min-height: 250px;
+    max-height: 260px;
+    /*overflow-y:scroll;*/
 }
 #mTPanelTitle{
     width: inherit;

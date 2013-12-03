@@ -24,10 +24,6 @@
                 <?php include 'Macros/VerticalMenuItems.php'; ?>
             </div>
             <div id="adminMiddle">
-                <div style="color: olive;font-size: 20px; text-align: center;width: 100%">****Welcome, <?php echo strtoupper($_SESSION['name']) ?>****</div>
-               
-            </div>
-            <div id="rightPanel">
                  <div  style="padding-top: 50px;text-align: center;font-size: 25px;color: #990000">
                     <form name="login" action="change_pass.php" method="POST">
                         <span style="text-align: center;font-size: 25px;color: green">Change your password</span>
@@ -99,6 +95,9 @@
                     </form>
                 </div>
 
+            </div>
+            <div id="rightPanel">
+                 
             </div>
             <div id="adminFooter">
                 <?php include 'Macros/AdminFooter.php'; ?>

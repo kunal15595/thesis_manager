@@ -15,11 +15,15 @@
                 </div>
                 <div id="adminHeaderLocation">Dashboard Home</div>
             </div>
-            <div id="adminVMenu">
-                <?php include 'PhpIncludeFiles/Admin/VerticalMenuItems.php'; ?>
-            </div>
-            <div id="adminMiddle">
-                <img id="dashboard" src="../web/images/dashboard.png" width="701" height="259" alt="dashboard"/>
+            <div id="middle">
+                <div id="adminVMenu">
+                    <?php include 'PhpIncludeFiles/Admin/VerticalMenuItems.php'; ?>
+                </div>
+                <div id="adminMiddle">
+                    <img id="dashboard" src="../web/images/dashboard.png" width="701" height="259" alt="dashboard"/>
+                </div>
+                <div id="rightPanel">
+                </div>
             </div>
             <div id="adminFooter">
                 <?php include 'PhpIncludeFiles/Admin/AdminFooter.php'; ?>

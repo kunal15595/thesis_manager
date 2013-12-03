@@ -3,11 +3,8 @@ require_once '../../config/config.php';
 require_once '../../config/connect.php';
 if(isset($_GET['serch_word'])&&!empty($_GET['serch_word'])){
 	$search_word=$_GET['serch_word'];
-	echo $search_word;
-	$search_word = preg_replace("#[^0-9a-z]#i", "", $search_word);
-	$search_word=strtolower($search_word);
 
-	$query="SELECT advisor_name,advisor_id FROM advisor WHERE advisor_name LIKE '".$search_word."' ";
+	$query="SELECT advisor_name,advisor_id FROM advisor WHERE advisor_name LIKE '".mysql_real_escape_string($search_word)."' ";
 	//,`advisor_id`
 	//where `advisor_nm`=' ".$search_word." '
 	$result=mysql_query($query);
@@ -16,21 +13,25 @@ if(isset($_GET['serch_word'])&&!empty($_GET['serch_word'])){
 	// echo $num_rows;
 	if($num_rows==1){
 		////////////////////////////////////////////////////////////////
-        echo 'Name:';
-        	echo " ".$search_word;
-		echo "<br>";
-		echo "<br>";            
+		?><hr>
+        Name:
+        	<?php echo " ".$search_word;?>
+		<br>
+		<br>            
         
-        echo 'Profile Photo:';
-        	echo '<br>';   
+        Profile Photo:
+       	<br> 
+       	<?php  
            	$query="SELECT photo FROM list WHERE `user_id`='".mysql_real_escape_string($advisor_id)."'"; 
             $result=mysql_query($query);
             $row=mysql_fetch_array($result);
-            echo '<img src="data:image/jpeg;base64,' . base64_encode( $row['photo'] ) . '" height="100px" width="90px"/>';
-		echo "<br>";
-		echo "<br>";	                       
+        ?>
+        <?php echo '<img src="data:image/jpeg;base64,' . base64_encode( $row['photo'] ) . '" height="100px" width="90px"/>' ?>
+		<br>
+		<br>	                       
 
-        echo   'Research intrest :';          
+        Research intrest :
+        <?php          
         	$query="SELECT field from categories where prof='".$search_word."'";
         	$result=mysql_query($query);
 
@@ -38,10 +39,12 @@ if(isset($_GET['serch_word'])&&!empty($_GET['serch_word'])){
             	echo "<br>";
             	echo " ".$row['field'];
         	}
-		echo "<br>";
-		echo "<br>";      
+       	?>
+		<br>
+		<br>      
 
-    	echo  "Mail id :";
+    	Mail id :
+    	<?php
         	echo " " . $advisor_id . "@iitg.ernet.in";
 		////////////////////////////////////////////////////////////////
 	}else{

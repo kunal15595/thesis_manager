@@ -26,9 +26,6 @@
                     <?php include '../Macros/VerticalMenuItems.php'; ?>
                 </div>
                 <div id="adminMiddle">
-                    
-                </div>
-                <div id="rightPanel">
                     <form id='get_profile' action='people.php' method="GET">
                         <div id="select">
                             <div id="autosuggest">
@@ -49,6 +46,9 @@
                     <div id='profile'>
                         <?php require 'search.php'; ?>
                     </div>
+                </div>
+                <div id="rightPanel">
+                    
                 </div>
             </div>
             <div id="adminFooter">

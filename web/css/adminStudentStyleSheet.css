@@ -34,6 +34,9 @@
     border-top-style: dotted;
     border-top-width: 3px;
     border-top-color: #009933;
+    overflow: hidden;
+    overflow-y:scroll;
+    max-height: 400px;
 }
 
 

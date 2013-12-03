@@ -21,14 +21,11 @@
                 <div id="adminVMenu">
                     <?php include '../PhpIncludeFiles/faculty_vertical_menue.php'; ?>
                 </div>
-                <div id="adminMiddle">
-                    
-                </div>
-                <div id="rightPanel">
+                <div id="facultyMiddle">
                     <form id='get_profile' action='people.php' method="GET">
                         <div id="select">
                             <div id="autosuggest">
-                                <input type="text" class="autosuggest" placeholder="Search Name..." name='serch_word'/>
+                                <input type="text" autocomplete="off" class="autosuggest" placeholder="Search Name..." name='serch_word'/>
                             </div>
                             
                             <div class="dropdown">
@@ -45,6 +42,9 @@
                     <div id='profile'>
                         <?php require 'search.php'; ?>
                     </div>
+                </div>
+                <div id="rightPanel">
+                    
                 </div>
             </div>
             <div id="adminFooter">
