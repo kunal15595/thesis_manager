@@ -1,5 +1,5 @@
 <?php
-include '../config/config.php';
+include '../../config/config.php';
 //include '../config/connect.php';
 /* Define MySQL connection details and database table name */ 
 $SETTINGS["hostname"]=constant("HOSTNAME");

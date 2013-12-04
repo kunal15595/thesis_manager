@@ -1,5 +1,7 @@
 #Calendar {
-	width:300px;	
+	width:300px;
+	margin-top:40px;
+	margin-left:180px;
 }
 
 #Calendar td {
@@ -54,12 +56,16 @@
 
 #Events h2 {
 	font-family:Arial, Helvetica, sans-serif;
-	font-size:12px;
+	font-size:18px;
+	color:green;
 	font-weight:bold;
-	margin-top:10px;
+	margin-top:20px;
+	margin-left: 140px;
 }
 
 #Events span {
 	font-family:Arial, Helvetica, sans-serif;
-	font-size:12px;
+	font-size:20px;
+	color:green;
+	margin-left: 140px;
 }
