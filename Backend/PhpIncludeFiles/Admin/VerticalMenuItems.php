@@ -23,6 +23,10 @@
 <div id="adminVMenuItem8">
 	<a class="adminVMenuItemLInk" href='<?php echo constant("HOST11")."/Backend/logout.php"?>'>Log Out</a>
 </div>
-<div id="adminVMenuItem8">
+<div id="adminVMenuItem9">
 	<a class="adminVMenuItemLInk" href='<?php echo constant("HOST11")."/Backend/event-calender/index.php"?>'>Calender</a>
 </div>
+<div id="adminVMenuItem10">
+	<a class="adminVMenuItemLInk" href='<?php echo constant("HOST11")."/Backend/cal_schedule/index.php"?>'>Schedule</a>
+</div>
+

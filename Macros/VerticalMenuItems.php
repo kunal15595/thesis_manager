@@ -8,4 +8,4 @@
 <div id="adminVMenuItem"><a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/user_profile/student_profile.php'?>">User Profile</a></div>
 <div id="adminVMenuItem"><a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/people/people.php'?>">Faculty</a></div>
 <div id="adminVMenuItem"><a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/event-calender/index.php'?>">Calendar</a></div>
-<div id="adminVMenuItem"><a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/event-calender/index.php'?>">Schedule</a></div>
+<div id="adminVMenuItem"><a class="adminVMenuItemLInk" href="<?php echo constant("HOST11").'/schedule/index.php'?>">Schedule</a></div>

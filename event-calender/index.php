@@ -22,8 +22,9 @@
                 <div id="adminVMenu">
                     <?php include '../Macros/VerticalMenuItems.php'; ?>
                 </div>
-                <div id="adminMiddle">
-                    <div id="welcome">Welcome, <?php echo strtoupper($_SESSION['name']); ?></div>
+                <div id="adminMiddle" background="calendar.jpg">
+                   <p id="a"> <div id="welcome">Welcome, <?php echo strtoupper($_SESSION['name']); ?></div></p>
+                    <img src="calendar.jpg" width="600" height="460">
                 </div>
 		            <script type="text/javascript" src="../js/jquery.js"></script>
 		            <script type="text/javascript" src="../js/User.js"></script>

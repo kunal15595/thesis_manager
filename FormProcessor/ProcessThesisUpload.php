@@ -83,7 +83,7 @@ echo "3";
 
             //If the file was exists but the renaming operation was unsuccessfull.
             if ($file_exist == TRUE && $file_renamed == FALSE) {
-                $pageResultString = '<br/><br/><b>Uploading Successful!!!!';
+                $pageResultString = '<br/><br/><b>Uploading could not file_renamed!!!!';
             } else {
                 //Copy the file to exact location.
                     $res1 = move_uploaded_file($_FILES["fileThesis"]["tmp_name"], "../Upload/" . $_SESSION['class'] . "/pdf/" . $newFileName);

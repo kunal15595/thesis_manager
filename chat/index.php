@@ -33,7 +33,7 @@ $chat = new chat();
 		<div id="bodyPanel">
 		    <div id="adminHeader">
 		        <div id="adminHeaderTitle">
-		            <?php include 'Macros/headerImage.php';?>
+		            <?php include '../Macros/headerImage.php';?>
 		        </div>
 		        <div id="adminHeaderLocation">Department of CSE, IIT Guwahati</div>
 		    </div>
@@ -84,7 +84,7 @@ $chat = new chat();
 				</div>
 			</div>
 			<div id="adminFooter">
-			        <?php include 'Macros/AdminFooter.php'; ?>
+			        <?php include '../Macros/AdminFooter.php'; ?>
 			</div>
 		</div>
 		 
