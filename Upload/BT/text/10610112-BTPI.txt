@@ -1,0 +1,33 @@
+PHP is a server-side scripting language designed for web development but also used as a general-purpose programming language. 
+PHP is now installed on more than 244 million websites and 2.1 million web servers.[2] Originally created by Rasmus Lerdorf in 
+1995, the reference implementation of PHP is now produced by The PHP Group.[3] While PHP originally stood for Personal Home Page,
+[4] it now stands for PHP: Hypertext Preprocessor, a recursive acronym.[5]
+
+PHP code is interpreted by a web server with a PHP processor module, which generates the resulting web page: 
+PHP commands can be embedded directly into an HTML source document rather than calling an external file to process data. 
+It has also evolved to include a command-line interface capability and can be used in standalone graphical applications.[6]
+
+PHP is free software released under the PHP License, 
+which is incompatible with the GNU General Public License (GPL) due to 
+restrictions on the usage of the term PHP.[7] PHP can be deployed on most 
+web servers and also as a standalone shell on almost every operating system and platform, 
+free of charge.[8]
+
+
+PHP is a scripting language designed to fill the gap between SSI (Server Side Includes) and Perl, 
+intended for the web environment. Its principal application is the implementation of web pages having 
+dynamic content. PHP has gained quite a following in recent times, and it is one of the frontrunners 
+in the Open Source software movement. Its popularity derives from its C-like syntax, and its simplicity. 
+PHP is currently divided into two major versions: PHP 4 and PHP 5, although PHP 4 is deprecated and is 
+no longer developed or supplied with critical bug fixes. PHP 6 is currently under development.
+
+If you've ever been to a website that prompts you to login, you've probably encountered a server-side 
+scripting language. Due to its market saturation, this means you've probably come across PHP. 
+PHP was designed by Rasmus Lerdorf to display his resume online and to collect data from his visitors.
+
+Basically, PHP allows a static webpage to become dynamic. "PHP" is an acronym that stands for 
+"PHP: Hypertext Preprocessor". The word "Preprocessor" means that PHP makes changes before 
+the HTML page is created. This enables developers to create powerful applications which 
+can publish a blog, remotely control hardware, or run a powerful website such as Wikipedia 
+or Wikibooks. Of course, to accomplish something such as this, you need a 
+database application such as MySQL.
